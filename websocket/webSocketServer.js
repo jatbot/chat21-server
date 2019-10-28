@@ -1,7 +1,7 @@
 var Message = require("../models/message");
 const WebSocket = require('ws');
-var message2Event = require("../event/message2Event");
-var messageEvent = require("../event/messageEvent");
+var message2Event = require("../events/message2Event");
+var messageEvent = require("../events/messageEvent");
 var config = require('../config/database'); // get db config file
 var winston = require('../config/winston');
 const PubSub = require('./pubsub');
@@ -41,7 +41,8 @@ class WebSocketServer {
     messageEvent.on('message.create', function (message) {
       winston.info('messageEvent websocket server ', message);
         //that.sendAll(message,'message');        
-        pubSubServer.handlePublishMessage (message.id_project+'/requests/'+message.request.request_id+'/messages/', request, undefined, true);
+//	/apps/{app_id}/users/{sender_id}/messages/{recipient_id}/{message_id}
+        pubSubServer.handlePublishMessage ('/apps/'+message.app_id+'/users/'+message.sender_id+'/messages/'+message.recipient_id, message, undefined, true);
       });
    
   }

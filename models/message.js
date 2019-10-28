@@ -30,7 +30,8 @@ var MessageSchema = new Schema({
   type: {
     type: String,
     required: true,
-    index: true
+    index: true,
+    default: "direct"
   },
   status: {
     type: String,

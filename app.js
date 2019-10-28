@@ -99,7 +99,7 @@ app.get('/', function (req, res) {
   
 
 
-app.use('/message', message);
+app.use('/messages', message);
 
  
   

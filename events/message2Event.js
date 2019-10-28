@@ -1,6 +1,6 @@
 var winston = require('../config/winston');
 var MessageConstants = require("../models/messageConstants");
-var messageEvent = require("../event/messageEvent");
+var messageEvent = require("../events/messageEvent");
 
 
 
