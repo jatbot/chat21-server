@@ -614,3 +614,6 @@ info: message2Event init
 info: databaseUri: mongodb://localhost/chat21
 info: autoIndex: true
 info: message2Event init
+info: databaseUri: mongodb://localhost/chat21
+info: autoIndex: true
+info: message2Event init
