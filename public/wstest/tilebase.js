@@ -26,6 +26,10 @@ class Tilebase {
         return objIndex;
 
     }
+    send (message) {
+        console.log("send message", message);
+        this.ws.send(message);
+    }
     start(initialMessage) {
         // start(token) {
         var that = this;
@@ -43,7 +47,8 @@ class Tilebase {
                     // var ws = new WebSocket('ws://localhost:3000/5bae41325f03b900401e39e8/messages');
                     
                     // 'ws://localhost:40510'
-                    var ws = new WebSocket(that.url);
+                    that.ws = new WebSocket(that.url);
+                    var ws = that.ws;
                     // var ws = new WebSocket(that.url, options);
                     ws.onopen = function () {
                         console.log('websocket is connected2 ...');

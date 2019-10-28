@@ -8,9 +8,8 @@
             <script>
                 
                 
-                var tilebase = new Tilebase('ws://localhost:3000?token=JWT 123'
-                // var tilebase = new Tilebase('ws://localhost:3000?id_project=5ca366fdee19dbc72e98e96f&events=["request", "message"]&q={}&token=JWT ...'
-             
+                // var 
+                tilebase = new Tilebase('ws://localhost:3000?token=JWT 123'             
                     , function(data, notification) {
                         $('#messages').append(`<div id="${data._id}">${data.text} ${notification.event}</div>`);
                     }
