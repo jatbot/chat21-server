@@ -1,0 +1,358 @@
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+error: uncaughtException: Cannot find module './routes/auth'
+Error: Cannot find module './routes/auth'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:613:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:539:25)
+    at Module.require (internal/modules/cjs/loader.js:667:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/app.js:39:12)
+    at Module._compile (internal/modules/cjs/loader.js:738:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+    at Module.load (internal/modules/cjs/loader.js:630:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:3)
+    at Module.require (internal/modules/cjs/loader.js:667:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/bin/www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:738:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+    at Module.load (internal/modules/cjs/loader.js:630:32) {"error":{"code":"MODULE_NOT_FOUND"},"stack":"Error: Cannot find module './routes/auth'\n    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:613:15)\n    at Function.Module._load (internal/modules/cjs/loader.js:539:25)\n    at Module.require (internal/modules/cjs/loader.js:667:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/app.js:39:12)\n    at Module._compile (internal/modules/cjs/loader.js:738:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)\n    at Module.load (internal/modules/cjs/loader.js:630:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:562:3)\n    at Module.require (internal/modules/cjs/loader.js:667:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/bin/www:7:11)\n    at Module._compile (internal/modules/cjs/loader.js:738:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)\n    at Module.load (internal/modules/cjs/loader.js:630:32)","exception":true,"date":"Mon Oct 28 2019 12:46:56 GMT+0100 (GMT+01:00)","process":{"pid":42540,"uid":501,"gid":20,"cwd":"/Users/andrealeo/dev/chat21/chat21-server","execPath":"/usr/local/bin/node","version":"v11.10.0","argv":["/usr/local/bin/node","/Users/andrealeo/dev/chat21/chat21-server/bin/www"],"memoryUsage":{"rss":49700864,"heapTotal":31670272,"heapUsed":18225472,"external":18530988}},"os":{"loadavg":[4.64306640625,3.84423828125,3.33154296875],"uptime":749744},"trace":[{"column":15,"file":"internal/modules/cjs/loader.js","function":"Module._resolveFilename","line":613,"method":"_resolveFilename","native":false},{"column":25,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":539,"method":"_load","native":false},{"column":17,"file":"internal/modules/cjs/loader.js","function":"Module.require","line":667,"method":"require","native":false},{"column":18,"file":"internal/modules/cjs/helpers.js","function":"require","line":20,"method":null,"native":false},{"column":12,"file":"/Users/andrealeo/dev/chat21/chat21-server/app.js","function":null,"line":39,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":738,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":749,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":630,"method":"load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"tryModuleLoad","line":570,"method":null,"native":false},{"column":3,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":562,"method":"_load","native":false},{"column":17,"file":"internal/modules/cjs/loader.js","function":"Module.require","line":667,"method":"require","native":false},{"column":18,"file":"internal/modules/cjs/helpers.js","function":"require","line":20,"method":null,"native":false},{"column":11,"file":"/Users/andrealeo/dev/chat21/chat21-server/bin/www","function":null,"line":7,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":738,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":749,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":630,"method":"load","native":false}]}
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+error: uncaughtException: Cannot find module '../models/request'
+Error: Cannot find module '../models/request'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:613:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:539:25)
+    at Module.require (internal/modules/cjs/loader.js:667:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/routes/message.js:7:15)
+    at Module._compile (internal/modules/cjs/loader.js:738:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+    at Module.load (internal/modules/cjs/loader.js:630:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:3)
+    at Module.require (internal/modules/cjs/loader.js:667:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/app.js:39:15)
+    at Module._compile (internal/modules/cjs/loader.js:738:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+    at Module.load (internal/modules/cjs/loader.js:630:32) {"error":{"code":"MODULE_NOT_FOUND"},"stack":"Error: Cannot find module '../models/request'\n    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:613:15)\n    at Function.Module._load (internal/modules/cjs/loader.js:539:25)\n    at Module.require (internal/modules/cjs/loader.js:667:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/routes/message.js:7:15)\n    at Module._compile (internal/modules/cjs/loader.js:738:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)\n    at Module.load (internal/modules/cjs/loader.js:630:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:562:3)\n    at Module.require (internal/modules/cjs/loader.js:667:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/app.js:39:15)\n    at Module._compile (internal/modules/cjs/loader.js:738:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)\n    at Module.load (internal/modules/cjs/loader.js:630:32)","exception":true,"date":"Mon Oct 28 2019 12:47:15 GMT+0100 (GMT+01:00)","process":{"pid":42552,"uid":501,"gid":20,"cwd":"/Users/andrealeo/dev/chat21/chat21-server","execPath":"/usr/local/bin/node","version":"v11.10.0","argv":["/usr/local/bin/node","/Users/andrealeo/dev/chat21/chat21-server/bin/www"],"memoryUsage":{"rss":49881088,"heapTotal":31670272,"heapUsed":18276640,"external":18538857}},"os":{"loadavg":[4.0673828125,3.77099609375,3.31689453125],"uptime":749763},"trace":[{"column":15,"file":"internal/modules/cjs/loader.js","function":"Module._resolveFilename","line":613,"method":"_resolveFilename","native":false},{"column":25,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":539,"method":"_load","native":false},{"column":17,"file":"internal/modules/cjs/loader.js","function":"Module.require","line":667,"method":"require","native":false},{"column":18,"file":"internal/modules/cjs/helpers.js","function":"require","line":20,"method":null,"native":false},{"column":15,"file":"/Users/andrealeo/dev/chat21/chat21-server/routes/message.js","function":null,"line":7,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":738,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":749,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":630,"method":"load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"tryModuleLoad","line":570,"method":null,"native":false},{"column":3,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":562,"method":"_load","native":false},{"column":17,"file":"internal/modules/cjs/loader.js","function":"Module.require","line":667,"method":"require","native":false},{"column":18,"file":"internal/modules/cjs/helpers.js","function":"require","line":20,"method":null,"native":false},{"column":15,"file":"/Users/andrealeo/dev/chat21/chat21-server/app.js","function":null,"line":39,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":738,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":749,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":630,"method":"load","native":false}]}
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+error: uncaughtException: Cannot find module '../models/request'
+Error: Cannot find module '../models/request'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:613:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:539:25)
+    at Module.require (internal/modules/cjs/loader.js:667:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/routes/message.js:7:15)
+    at Module._compile (internal/modules/cjs/loader.js:738:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+    at Module.load (internal/modules/cjs/loader.js:630:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:3)
+    at Module.require (internal/modules/cjs/loader.js:667:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/app.js:39:15)
+    at Module._compile (internal/modules/cjs/loader.js:738:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+    at Module.load (internal/modules/cjs/loader.js:630:32) {"error":{"code":"MODULE_NOT_FOUND"},"stack":"Error: Cannot find module '../models/request'\n    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:613:15)\n    at Function.Module._load (internal/modules/cjs/loader.js:539:25)\n    at Module.require (internal/modules/cjs/loader.js:667:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/routes/message.js:7:15)\n    at Module._compile (internal/modules/cjs/loader.js:738:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)\n    at Module.load (internal/modules/cjs/loader.js:630:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:562:3)\n    at Module.require (internal/modules/cjs/loader.js:667:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/app.js:39:15)\n    at Module._compile (internal/modules/cjs/loader.js:738:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)\n    at Module.load (internal/modules/cjs/loader.js:630:32)","exception":true,"date":"Mon Oct 28 2019 12:47:18 GMT+0100 (GMT+01:00)","process":{"pid":42556,"uid":501,"gid":20,"cwd":"/Users/andrealeo/dev/chat21/chat21-server","execPath":"/usr/local/bin/node","version":"v11.10.0","argv":["/usr/local/bin/node","/Users/andrealeo/dev/chat21/chat21-server/bin/www"],"memoryUsage":{"rss":49766400,"heapTotal":31670272,"heapUsed":18290632,"external":18538857}},"os":{"loadavg":[4.0673828125,3.77099609375,3.31689453125],"uptime":749766},"trace":[{"column":15,"file":"internal/modules/cjs/loader.js","function":"Module._resolveFilename","line":613,"method":"_resolveFilename","native":false},{"column":25,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":539,"method":"_load","native":false},{"column":17,"file":"internal/modules/cjs/loader.js","function":"Module.require","line":667,"method":"require","native":false},{"column":18,"file":"internal/modules/cjs/helpers.js","function":"require","line":20,"method":null,"native":false},{"column":15,"file":"/Users/andrealeo/dev/chat21/chat21-server/routes/message.js","function":null,"line":7,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":738,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":749,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":630,"method":"load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"tryModuleLoad","line":570,"method":null,"native":false},{"column":3,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":562,"method":"_load","native":false},{"column":17,"file":"internal/modules/cjs/loader.js","function":"Module.require","line":667,"method":"require","native":false},{"column":18,"file":"internal/modules/cjs/helpers.js","function":"require","line":20,"method":null,"native":false},{"column":15,"file":"/Users/andrealeo/dev/chat21/chat21-server/app.js","function":null,"line":39,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":738,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":749,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":630,"method":"load","native":false}]}
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+error: uncaughtException: Cannot find module '../models/messageConstants'
+Error: Cannot find module '../models/messageConstants'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:613:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:539:25)
+    at Module.require (internal/modules/cjs/loader.js:667:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/routes/message.js:8:24)
+    at Module._compile (internal/modules/cjs/loader.js:738:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+    at Module.load (internal/modules/cjs/loader.js:630:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:3)
+    at Module.require (internal/modules/cjs/loader.js:667:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/app.js:39:15)
+    at Module._compile (internal/modules/cjs/loader.js:738:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+    at Module.load (internal/modules/cjs/loader.js:630:32) {"error":{"code":"MODULE_NOT_FOUND"},"stack":"Error: Cannot find module '../models/messageConstants'\n    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:613:15)\n    at Function.Module._load (internal/modules/cjs/loader.js:539:25)\n    at Module.require (internal/modules/cjs/loader.js:667:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/routes/message.js:8:24)\n    at Module._compile (internal/modules/cjs/loader.js:738:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)\n    at Module.load (internal/modules/cjs/loader.js:630:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:562:3)\n    at Module.require (internal/modules/cjs/loader.js:667:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/app.js:39:15)\n    at Module._compile (internal/modules/cjs/loader.js:738:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)\n    at Module.load (internal/modules/cjs/loader.js:630:32)","exception":true,"date":"Mon Oct 28 2019 12:47:37 GMT+0100 (GMT+01:00)","process":{"pid":42604,"uid":501,"gid":20,"cwd":"/Users/andrealeo/dev/chat21/chat21-server","execPath":"/usr/local/bin/node","version":"v11.10.0","argv":["/usr/local/bin/node","/Users/andrealeo/dev/chat21/chat21-server/bin/www"],"memoryUsage":{"rss":49717248,"heapTotal":31145984,"heapUsed":18296088,"external":18538638}},"os":{"loadavg":[3.98583984375,3.7822265625,3.33154296875],"uptime":749785},"trace":[{"column":15,"file":"internal/modules/cjs/loader.js","function":"Module._resolveFilename","line":613,"method":"_resolveFilename","native":false},{"column":25,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":539,"method":"_load","native":false},{"column":17,"file":"internal/modules/cjs/loader.js","function":"Module.require","line":667,"method":"require","native":false},{"column":18,"file":"internal/modules/cjs/helpers.js","function":"require","line":20,"method":null,"native":false},{"column":24,"file":"/Users/andrealeo/dev/chat21/chat21-server/routes/message.js","function":null,"line":8,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":738,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":749,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":630,"method":"load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"tryModuleLoad","line":570,"method":null,"native":false},{"column":3,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":562,"method":"_load","native":false},{"column":17,"file":"internal/modules/cjs/loader.js","function":"Module.require","line":667,"method":"require","native":false},{"column":18,"file":"internal/modules/cjs/helpers.js","function":"require","line":20,"method":null,"native":false},{"column":15,"file":"/Users/andrealeo/dev/chat21/chat21-server/app.js","function":null,"line":39,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":738,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":749,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":630,"method":"load","native":false}]}
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+error: uncaughtException: Unexpected token }
+/Users/andrealeo/dev/chat21/chat21-server/routes/message.js:107
+});
+^
+
+SyntaxError: Unexpected token }
+    at new Script (vm.js:85:7)
+    at createScript (vm.js:266:10)
+    at Object.runInThisContext (vm.js:314:10)
+    at Module._compile (internal/modules/cjs/loader.js:698:28)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+    at Module.load (internal/modules/cjs/loader.js:630:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:3)
+    at Module.require (internal/modules/cjs/loader.js:667:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/app.js:39:15)
+    at Module._compile (internal/modules/cjs/loader.js:738:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+    at Module.load (internal/modules/cjs/loader.js:630:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:3) {"error":{},"stack":"/Users/andrealeo/dev/chat21/chat21-server/routes/message.js:107\n});\n^\n\nSyntaxError: Unexpected token }\n    at new Script (vm.js:85:7)\n    at createScript (vm.js:266:10)\n    at Object.runInThisContext (vm.js:314:10)\n    at Module._compile (internal/modules/cjs/loader.js:698:28)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)\n    at Module.load (internal/modules/cjs/loader.js:630:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:562:3)\n    at Module.require (internal/modules/cjs/loader.js:667:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/app.js:39:15)\n    at Module._compile (internal/modules/cjs/loader.js:738:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)\n    at Module.load (internal/modules/cjs/loader.js:630:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:562:3)","exception":true,"date":"Mon Oct 28 2019 12:47:56 GMT+0100 (GMT+01:00)","process":{"pid":42612,"uid":501,"gid":20,"cwd":"/Users/andrealeo/dev/chat21/chat21-server","execPath":"/usr/local/bin/node","version":"v11.10.0","argv":["/usr/local/bin/node","/Users/andrealeo/dev/chat21/chat21-server/bin/www"],"memoryUsage":{"rss":50003968,"heapTotal":31145984,"heapUsed":18240960,"external":18539180}},"os":{"loadavg":[3.52783203125,3.69677734375,3.3115234375],"uptime":749804},"trace":[{"column":7,"file":"vm.js","function":"new Script","line":85,"method":null,"native":false},{"column":10,"file":"vm.js","function":"createScript","line":266,"method":null,"native":false},{"column":10,"file":"vm.js","function":"Object.runInThisContext","line":314,"method":"runInThisContext","native":false},{"column":28,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":698,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":749,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":630,"method":"load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"tryModuleLoad","line":570,"method":null,"native":false},{"column":3,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":562,"method":"_load","native":false},{"column":17,"file":"internal/modules/cjs/loader.js","function":"Module.require","line":667,"method":"require","native":false},{"column":18,"file":"internal/modules/cjs/helpers.js","function":"require","line":20,"method":null,"native":false},{"column":15,"file":"/Users/andrealeo/dev/chat21/chat21-server/app.js","function":null,"line":39,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":738,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":749,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":630,"method":"load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"tryModuleLoad","line":570,"method":null,"native":false},{"column":3,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":562,"method":"_load","native":false}]}
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+error: uncaughtException: Cannot find module '../models/messageConstants'
+Error: Cannot find module '../models/messageConstants'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:613:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:539:25)
+    at Module.require (internal/modules/cjs/loader.js:667:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/routes/message.js:8:24)
+    at Module._compile (internal/modules/cjs/loader.js:738:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+    at Module.load (internal/modules/cjs/loader.js:630:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:3)
+    at Module.require (internal/modules/cjs/loader.js:667:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/app.js:39:15)
+    at Module._compile (internal/modules/cjs/loader.js:738:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+    at Module.load (internal/modules/cjs/loader.js:630:32) {"error":{"code":"MODULE_NOT_FOUND"},"stack":"Error: Cannot find module '../models/messageConstants'\n    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:613:15)\n    at Function.Module._load (internal/modules/cjs/loader.js:539:25)\n    at Module.require (internal/modules/cjs/loader.js:667:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/routes/message.js:8:24)\n    at Module._compile (internal/modules/cjs/loader.js:738:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)\n    at Module.load (internal/modules/cjs/loader.js:630:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:562:3)\n    at Module.require (internal/modules/cjs/loader.js:667:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/app.js:39:15)\n    at Module._compile (internal/modules/cjs/loader.js:738:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)\n    at Module.load (internal/modules/cjs/loader.js:630:32)","exception":true,"date":"Mon Oct 28 2019 12:48:10 GMT+0100 (GMT+01:00)","process":{"pid":42631,"uid":501,"gid":20,"cwd":"/Users/andrealeo/dev/chat21/chat21-server","execPath":"/usr/local/bin/node","version":"v11.10.0","argv":["/usr/local/bin/node","/Users/andrealeo/dev/chat21/chat21-server/bin/www"],"memoryUsage":{"rss":49917952,"heapTotal":31145984,"heapUsed":18288928,"external":18539180}},"os":{"loadavg":[3.6552734375,3.7119140625,3.3232421875],"uptime":749818},"trace":[{"column":15,"file":"internal/modules/cjs/loader.js","function":"Module._resolveFilename","line":613,"method":"_resolveFilename","native":false},{"column":25,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":539,"method":"_load","native":false},{"column":17,"file":"internal/modules/cjs/loader.js","function":"Module.require","line":667,"method":"require","native":false},{"column":18,"file":"internal/modules/cjs/helpers.js","function":"require","line":20,"method":null,"native":false},{"column":24,"file":"/Users/andrealeo/dev/chat21/chat21-server/routes/message.js","function":null,"line":8,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":738,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":749,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":630,"method":"load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"tryModuleLoad","line":570,"method":null,"native":false},{"column":3,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":562,"method":"_load","native":false},{"column":17,"file":"internal/modules/cjs/loader.js","function":"Module.require","line":667,"method":"require","native":false},{"column":18,"file":"internal/modules/cjs/helpers.js","function":"require","line":20,"method":null,"native":false},{"column":15,"file":"/Users/andrealeo/dev/chat21/chat21-server/app.js","function":null,"line":39,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":738,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":749,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":630,"method":"load","native":false}]}
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+error: uncaughtException: Cannot find module '../models/messageConstants'
+Error: Cannot find module '../models/messageConstants'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:613:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:539:25)
+    at Module.require (internal/modules/cjs/loader.js:667:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/routes/message.js:8:24)
+    at Module._compile (internal/modules/cjs/loader.js:738:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+    at Module.load (internal/modules/cjs/loader.js:630:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:3)
+    at Module.require (internal/modules/cjs/loader.js:667:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/app.js:39:15)
+    at Module._compile (internal/modules/cjs/loader.js:738:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+    at Module.load (internal/modules/cjs/loader.js:630:32) {"error":{"code":"MODULE_NOT_FOUND"},"stack":"Error: Cannot find module '../models/messageConstants'\n    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:613:15)\n    at Function.Module._load (internal/modules/cjs/loader.js:539:25)\n    at Module.require (internal/modules/cjs/loader.js:667:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/routes/message.js:8:24)\n    at Module._compile (internal/modules/cjs/loader.js:738:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)\n    at Module.load (internal/modules/cjs/loader.js:630:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:562:3)\n    at Module.require (internal/modules/cjs/loader.js:667:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/app.js:39:15)\n    at Module._compile (internal/modules/cjs/loader.js:738:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)\n    at Module.load (internal/modules/cjs/loader.js:630:32)","exception":true,"date":"Mon Oct 28 2019 12:48:21 GMT+0100 (GMT+01:00)","process":{"pid":42638,"uid":501,"gid":20,"cwd":"/Users/andrealeo/dev/chat21/chat21-server","execPath":"/usr/local/bin/node","version":"v11.10.0","argv":["/usr/local/bin/node","/Users/andrealeo/dev/chat21/chat21-server/bin/www"],"memoryUsage":{"rss":49725440,"heapTotal":31145984,"heapUsed":18267760,"external":18539180}},"os":{"loadavg":[3.3330078125,3.638671875,3.3017578125],"uptime":749829},"trace":[{"column":15,"file":"internal/modules/cjs/loader.js","function":"Module._resolveFilename","line":613,"method":"_resolveFilename","native":false},{"column":25,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":539,"method":"_load","native":false},{"column":17,"file":"internal/modules/cjs/loader.js","function":"Module.require","line":667,"method":"require","native":false},{"column":18,"file":"internal/modules/cjs/helpers.js","function":"require","line":20,"method":null,"native":false},{"column":24,"file":"/Users/andrealeo/dev/chat21/chat21-server/routes/message.js","function":null,"line":8,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":738,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":749,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":630,"method":"load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"tryModuleLoad","line":570,"method":null,"native":false},{"column":3,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":562,"method":"_load","native":false},{"column":17,"file":"internal/modules/cjs/loader.js","function":"Module.require","line":667,"method":"require","native":false},{"column":18,"file":"internal/modules/cjs/helpers.js","function":"require","line":20,"method":null,"native":false},{"column":15,"file":"/Users/andrealeo/dev/chat21/chat21-server/app.js","function":null,"line":39,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":738,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":749,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":630,"method":"load","native":false}]}
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+error: uncaughtException: Cannot find module '../models/messageConstants'
+Error: Cannot find module '../models/messageConstants'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:613:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:539:25)
+    at Module.require (internal/modules/cjs/loader.js:667:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/routes/message.js:8:24)
+    at Module._compile (internal/modules/cjs/loader.js:738:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+    at Module.load (internal/modules/cjs/loader.js:630:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:3)
+    at Module.require (internal/modules/cjs/loader.js:667:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/app.js:39:15)
+    at Module._compile (internal/modules/cjs/loader.js:738:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+    at Module.load (internal/modules/cjs/loader.js:630:32) {"error":{"code":"MODULE_NOT_FOUND"},"stack":"Error: Cannot find module '../models/messageConstants'\n    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:613:15)\n    at Function.Module._load (internal/modules/cjs/loader.js:539:25)\n    at Module.require (internal/modules/cjs/loader.js:667:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/routes/message.js:8:24)\n    at Module._compile (internal/modules/cjs/loader.js:738:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)\n    at Module.load (internal/modules/cjs/loader.js:630:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:562:3)\n    at Module.require (internal/modules/cjs/loader.js:667:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/app.js:39:15)\n    at Module._compile (internal/modules/cjs/loader.js:738:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)\n    at Module.load (internal/modules/cjs/loader.js:630:32)","exception":true,"date":"Mon Oct 28 2019 12:48:23 GMT+0100 (GMT+01:00)","process":{"pid":42643,"uid":501,"gid":20,"cwd":"/Users/andrealeo/dev/chat21/chat21-server","execPath":"/usr/local/bin/node","version":"v11.10.0","argv":["/usr/local/bin/node","/Users/andrealeo/dev/chat21/chat21-server/bin/www"],"memoryUsage":{"rss":50401280,"heapTotal":31670272,"heapUsed":18535088,"external":18539180}},"os":{"loadavg":[3.3330078125,3.638671875,3.3017578125],"uptime":749831},"trace":[{"column":15,"file":"internal/modules/cjs/loader.js","function":"Module._resolveFilename","line":613,"method":"_resolveFilename","native":false},{"column":25,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":539,"method":"_load","native":false},{"column":17,"file":"internal/modules/cjs/loader.js","function":"Module.require","line":667,"method":"require","native":false},{"column":18,"file":"internal/modules/cjs/helpers.js","function":"require","line":20,"method":null,"native":false},{"column":24,"file":"/Users/andrealeo/dev/chat21/chat21-server/routes/message.js","function":null,"line":8,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":738,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":749,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":630,"method":"load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"tryModuleLoad","line":570,"method":null,"native":false},{"column":3,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":562,"method":"_load","native":false},{"column":17,"file":"internal/modules/cjs/loader.js","function":"Module.require","line":667,"method":"require","native":false},{"column":18,"file":"internal/modules/cjs/helpers.js","function":"require","line":20,"method":null,"native":false},{"column":15,"file":"/Users/andrealeo/dev/chat21/chat21-server/app.js","function":null,"line":39,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":738,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":749,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":630,"method":"load","native":false}]}
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+error: uncaughtException: passport is not defined
+ReferenceError: passport is not defined
+    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/app.js:89:9)
+    at Module._compile (internal/modules/cjs/loader.js:738:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+    at Module.load (internal/modules/cjs/loader.js:630:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:3)
+    at Module.require (internal/modules/cjs/loader.js:667:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/bin/www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:738:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+    at Module.load (internal/modules/cjs/loader.js:630:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:801:12)
+    at internal/main/run_main_module.js:21:11 {"error":{},"stack":"ReferenceError: passport is not defined\n    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/app.js:89:9)\n    at Module._compile (internal/modules/cjs/loader.js:738:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)\n    at Module.load (internal/modules/cjs/loader.js:630:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:562:3)\n    at Module.require (internal/modules/cjs/loader.js:667:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/bin/www:7:11)\n    at Module._compile (internal/modules/cjs/loader.js:738:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)\n    at Module.load (internal/modules/cjs/loader.js:630:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:562:3)\n    at Function.Module.runMain (internal/modules/cjs/loader.js:801:12)\n    at internal/main/run_main_module.js:21:11","exception":true,"date":"Mon Oct 28 2019 12:48:40 GMT+0100 (GMT+01:00)","process":{"pid":42709,"uid":501,"gid":20,"cwd":"/Users/andrealeo/dev/chat21/chat21-server","execPath":"/usr/local/bin/node","version":"v11.10.0","argv":["/usr/local/bin/node","/Users/andrealeo/dev/chat21/chat21-server/bin/www"],"memoryUsage":{"rss":51240960,"heapTotal":31670272,"heapUsed":19429776,"external":18610334}},"os":{"loadavg":[4.46923828125,3.84716796875,3.3818359375],"uptime":749848},"trace":[{"column":9,"file":"/Users/andrealeo/dev/chat21/chat21-server/app.js","function":null,"line":89,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":738,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":749,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":630,"method":"load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"tryModuleLoad","line":570,"method":null,"native":false},{"column":3,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":562,"method":"_load","native":false},{"column":17,"file":"internal/modules/cjs/loader.js","function":"Module.require","line":667,"method":"require","native":false},{"column":18,"file":"internal/modules/cjs/helpers.js","function":"require","line":20,"method":null,"native":false},{"column":11,"file":"/Users/andrealeo/dev/chat21/chat21-server/bin/www","function":null,"line":7,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":738,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":749,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":630,"method":"load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"tryModuleLoad","line":570,"method":null,"native":false},{"column":3,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":562,"method":"_load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"Module.runMain","line":801,"method":"runMain","native":false},{"column":11,"file":"internal/main/run_main_module.js","function":null,"line":21,"method":null,"native":false}]}
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+error: uncaughtException: passport is not defined
+ReferenceError: passport is not defined
+    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/app.js:89:9)
+    at Module._compile (internal/modules/cjs/loader.js:738:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+    at Module.load (internal/modules/cjs/loader.js:630:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:3)
+    at Module.require (internal/modules/cjs/loader.js:667:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/bin/www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:738:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+    at Module.load (internal/modules/cjs/loader.js:630:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:801:12)
+    at internal/main/run_main_module.js:21:11 {"error":{},"stack":"ReferenceError: passport is not defined\n    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/app.js:89:9)\n    at Module._compile (internal/modules/cjs/loader.js:738:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)\n    at Module.load (internal/modules/cjs/loader.js:630:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:562:3)\n    at Module.require (internal/modules/cjs/loader.js:667:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/bin/www:7:11)\n    at Module._compile (internal/modules/cjs/loader.js:738:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)\n    at Module.load (internal/modules/cjs/loader.js:630:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:562:3)\n    at Function.Module.runMain (internal/modules/cjs/loader.js:801:12)\n    at internal/main/run_main_module.js:21:11","exception":true,"date":"Mon Oct 28 2019 12:48:44 GMT+0100 (GMT+01:00)","process":{"pid":42716,"uid":501,"gid":20,"cwd":"/Users/andrealeo/dev/chat21/chat21-server","execPath":"/usr/local/bin/node","version":"v11.10.0","argv":["/usr/local/bin/node","/Users/andrealeo/dev/chat21/chat21-server/bin/www"],"memoryUsage":{"rss":51412992,"heapTotal":31670272,"heapUsed":19223712,"external":18610334}},"os":{"loadavg":[4.271484375,3.81640625,3.37353515625],"uptime":749852},"trace":[{"column":9,"file":"/Users/andrealeo/dev/chat21/chat21-server/app.js","function":null,"line":89,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":738,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":749,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":630,"method":"load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"tryModuleLoad","line":570,"method":null,"native":false},{"column":3,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":562,"method":"_load","native":false},{"column":17,"file":"internal/modules/cjs/loader.js","function":"Module.require","line":667,"method":"require","native":false},{"column":18,"file":"internal/modules/cjs/helpers.js","function":"require","line":20,"method":null,"native":false},{"column":11,"file":"/Users/andrealeo/dev/chat21/chat21-server/bin/www","function":null,"line":7,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":738,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":749,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":630,"method":"load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"tryModuleLoad","line":570,"method":null,"native":false},{"column":3,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":562,"method":"_load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"Module.runMain","line":801,"method":"runMain","native":false},{"column":11,"file":"internal/main/run_main_module.js","function":null,"line":21,"method":null,"native":false}]}
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+error: uncaughtException: auth is not defined
+ReferenceError: auth is not defined
+    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/app.js:102:18)
+    at Module._compile (internal/modules/cjs/loader.js:738:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+    at Module.load (internal/modules/cjs/loader.js:630:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:3)
+    at Module.require (internal/modules/cjs/loader.js:667:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/bin/www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:738:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+    at Module.load (internal/modules/cjs/loader.js:630:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:801:12)
+    at internal/main/run_main_module.js:21:11 {"error":{},"stack":"ReferenceError: auth is not defined\n    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/app.js:102:18)\n    at Module._compile (internal/modules/cjs/loader.js:738:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)\n    at Module.load (internal/modules/cjs/loader.js:630:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:562:3)\n    at Module.require (internal/modules/cjs/loader.js:667:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/bin/www:7:11)\n    at Module._compile (internal/modules/cjs/loader.js:738:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)\n    at Module.load (internal/modules/cjs/loader.js:630:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:562:3)\n    at Function.Module.runMain (internal/modules/cjs/loader.js:801:12)\n    at internal/main/run_main_module.js:21:11","exception":true,"date":"Mon Oct 28 2019 12:49:01 GMT+0100 (GMT+01:00)","process":{"pid":42728,"uid":501,"gid":20,"cwd":"/Users/andrealeo/dev/chat21/chat21-server","execPath":"/usr/local/bin/node","version":"v11.10.0","argv":["/usr/local/bin/node","/Users/andrealeo/dev/chat21/chat21-server/bin/www"],"memoryUsage":{"rss":50749440,"heapTotal":31145984,"heapUsed":19166496,"external":18610334}},"os":{"loadavg":[4.42626953125,3.87353515625,3.4013671875],"uptime":749869},"trace":[{"column":18,"file":"/Users/andrealeo/dev/chat21/chat21-server/app.js","function":null,"line":102,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":738,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":749,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":630,"method":"load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"tryModuleLoad","line":570,"method":null,"native":false},{"column":3,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":562,"method":"_load","native":false},{"column":17,"file":"internal/modules/cjs/loader.js","function":"Module.require","line":667,"method":"require","native":false},{"column":18,"file":"internal/modules/cjs/helpers.js","function":"require","line":20,"method":null,"native":false},{"column":11,"file":"/Users/andrealeo/dev/chat21/chat21-server/bin/www","function":null,"line":7,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":738,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":749,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":630,"method":"load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"tryModuleLoad","line":570,"method":null,"native":false},{"column":3,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":562,"method":"_load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"Module.runMain","line":801,"method":"runMain","native":false},{"column":11,"file":"internal/main/run_main_module.js","function":null,"line":21,"method":null,"native":false}]}
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+error: uncaughtException: auth is not defined
+ReferenceError: auth is not defined
+    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/app.js:102:18)
+    at Module._compile (internal/modules/cjs/loader.js:738:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+    at Module.load (internal/modules/cjs/loader.js:630:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:3)
+    at Module.require (internal/modules/cjs/loader.js:667:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/bin/www:7:11)
+    at Module._compile (internal/modules/cjs/loader.js:738:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+    at Module.load (internal/modules/cjs/loader.js:630:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:801:12)
+    at internal/main/run_main_module.js:21:11 {"error":{},"stack":"ReferenceError: auth is not defined\n    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/app.js:102:18)\n    at Module._compile (internal/modules/cjs/loader.js:738:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)\n    at Module.load (internal/modules/cjs/loader.js:630:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:562:3)\n    at Module.require (internal/modules/cjs/loader.js:667:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/bin/www:7:11)\n    at Module._compile (internal/modules/cjs/loader.js:738:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)\n    at Module.load (internal/modules/cjs/loader.js:630:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:562:3)\n    at Function.Module.runMain (internal/modules/cjs/loader.js:801:12)\n    at internal/main/run_main_module.js:21:11","exception":true,"date":"Mon Oct 28 2019 12:49:03 GMT+0100 (GMT+01:00)","process":{"pid":42732,"uid":501,"gid":20,"cwd":"/Users/andrealeo/dev/chat21/chat21-server","execPath":"/usr/local/bin/node","version":"v11.10.0","argv":["/usr/local/bin/node","/Users/andrealeo/dev/chat21/chat21-server/bin/www"],"memoryUsage":{"rss":51937280,"heapTotal":31145984,"heapUsed":19660872,"external":18645282}},"os":{"loadavg":[4.42626953125,3.87353515625,3.4013671875],"uptime":749871},"trace":[{"column":18,"file":"/Users/andrealeo/dev/chat21/chat21-server/app.js","function":null,"line":102,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":738,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":749,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":630,"method":"load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"tryModuleLoad","line":570,"method":null,"native":false},{"column":3,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":562,"method":"_load","native":false},{"column":17,"file":"internal/modules/cjs/loader.js","function":"Module.require","line":667,"method":"require","native":false},{"column":18,"file":"internal/modules/cjs/helpers.js","function":"require","line":20,"method":null,"native":false},{"column":11,"file":"/Users/andrealeo/dev/chat21/chat21-server/bin/www","function":null,"line":7,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":738,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":749,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":630,"method":"load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"tryModuleLoad","line":570,"method":null,"native":false},{"column":3,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":562,"method":"_load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"Module.runMain","line":801,"method":"runMain","native":false},{"column":11,"file":"internal/main/run_main_module.js","function":null,"line":21,"method":null,"native":false}]}
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+error: uncaughtException: Cannot find module '../websocket/webSocketServer'
+Error: Cannot find module '../websocket/webSocketServer'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:613:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:539:25)
+    at Module.require (internal/modules/cjs/loader.js:667:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/bin/www:39:23)
+    at Module._compile (internal/modules/cjs/loader.js:738:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+    at Module.load (internal/modules/cjs/loader.js:630:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:801:12)
+    at internal/main/run_main_module.js:21:11 {"error":{"code":"MODULE_NOT_FOUND"},"stack":"Error: Cannot find module '../websocket/webSocketServer'\n    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:613:15)\n    at Function.Module._load (internal/modules/cjs/loader.js:539:25)\n    at Module.require (internal/modules/cjs/loader.js:667:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/bin/www:39:23)\n    at Module._compile (internal/modules/cjs/loader.js:738:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)\n    at Module.load (internal/modules/cjs/loader.js:630:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:562:3)\n    at Function.Module.runMain (internal/modules/cjs/loader.js:801:12)\n    at internal/main/run_main_module.js:21:11","exception":true,"date":"Mon Oct 28 2019 12:49:13 GMT+0100 (GMT+01:00)","process":{"pid":42744,"uid":501,"gid":20,"cwd":"/Users/andrealeo/dev/chat21/chat21-server","execPath":"/usr/local/bin/node","version":"v11.10.0","argv":["/usr/local/bin/node","/Users/andrealeo/dev/chat21/chat21-server/bin/www"],"memoryUsage":{"rss":51445760,"heapTotal":31670272,"heapUsed":19139024,"external":18610334}},"os":{"loadavg":[3.9794921875,3.794921875,3.37890625],"uptime":749881},"trace":[{"column":15,"file":"internal/modules/cjs/loader.js","function":"Module._resolveFilename","line":613,"method":"_resolveFilename","native":false},{"column":25,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":539,"method":"_load","native":false},{"column":17,"file":"internal/modules/cjs/loader.js","function":"Module.require","line":667,"method":"require","native":false},{"column":18,"file":"internal/modules/cjs/helpers.js","function":"require","line":20,"method":null,"native":false},{"column":23,"file":"/Users/andrealeo/dev/chat21/chat21-server/bin/www","function":null,"line":39,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":738,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":749,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":630,"method":"load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"tryModuleLoad","line":570,"method":null,"native":false},{"column":3,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":562,"method":"_load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"Module.runMain","line":801,"method":"runMain","native":false},{"column":11,"file":"internal/main/run_main_module.js","function":null,"line":21,"method":null,"native":false}]}
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+error: uncaughtException: Cannot find module '../websocket/webSocketServer'
+Error: Cannot find module '../websocket/webSocketServer'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:613:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:539:25)
+    at Module.require (internal/modules/cjs/loader.js:667:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/bin/www:39:23)
+    at Module._compile (internal/modules/cjs/loader.js:738:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+    at Module.load (internal/modules/cjs/loader.js:630:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:801:12)
+    at internal/main/run_main_module.js:21:11 {"error":{"code":"MODULE_NOT_FOUND"},"stack":"Error: Cannot find module '../websocket/webSocketServer'\n    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:613:15)\n    at Function.Module._load (internal/modules/cjs/loader.js:539:25)\n    at Module.require (internal/modules/cjs/loader.js:667:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/andrealeo/dev/chat21/chat21-server/bin/www:39:23)\n    at Module._compile (internal/modules/cjs/loader.js:738:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)\n    at Module.load (internal/modules/cjs/loader.js:630:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:570:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:562:3)\n    at Function.Module.runMain (internal/modules/cjs/loader.js:801:12)\n    at internal/main/run_main_module.js:21:11","exception":true,"date":"Mon Oct 28 2019 12:49:15 GMT+0100 (GMT+01:00)","process":{"pid":42758,"uid":501,"gid":20,"cwd":"/Users/andrealeo/dev/chat21/chat21-server","execPath":"/usr/local/bin/node","version":"v11.10.0","argv":["/usr/local/bin/node","/Users/andrealeo/dev/chat21/chat21-server/bin/www"],"memoryUsage":{"rss":50954240,"heapTotal":31670272,"heapUsed":19210728,"external":18610334}},"os":{"loadavg":[4.14111328125,3.8310546875,3.39404296875],"uptime":749883},"trace":[{"column":15,"file":"internal/modules/cjs/loader.js","function":"Module._resolveFilename","line":613,"method":"_resolveFilename","native":false},{"column":25,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":539,"method":"_load","native":false},{"column":17,"file":"internal/modules/cjs/loader.js","function":"Module.require","line":667,"method":"require","native":false},{"column":18,"file":"internal/modules/cjs/helpers.js","function":"require","line":20,"method":null,"native":false},{"column":23,"file":"/Users/andrealeo/dev/chat21/chat21-server/bin/www","function":null,"line":39,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":738,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":749,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":630,"method":"load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"tryModuleLoad","line":570,"method":null,"native":false},{"column":3,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":562,"method":"_load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"Module.runMain","line":801,"method":"runMain","native":false},{"column":11,"file":"internal/main/run_main_module.js","function":null,"line":21,"method":null,"native":false}]}
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/tiledesk
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/chat21
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/chat21
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/chat21
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/chat21
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/chat21
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/chat21
+info: autoIndex: true
+info: databaseUri: mongodb://localhost/chat21
+info: autoIndex: true
