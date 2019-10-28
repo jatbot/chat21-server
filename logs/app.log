@@ -638,3 +638,285 @@ info: message2Event init
 info: databaseUri: mongodb://localhost/chat21
 info: autoIndex: true
 info: message2Event init
+info: databaseUri: mongodb://localhost/chat21
+info: autoIndex: true
+error: uncaughtException: failed to connect to server [localhost:27017] on first connect [MongoError: connect ECONNREFUSED 127.0.0.1:27017]
+MongoError: failed to connect to server [localhost:27017] on first connect [MongoError: connect ECONNREFUSED 127.0.0.1:27017]
+    at Pool.<anonymous> (/home/ubuntu/dev/chat21-server/node_modules/mongodb-core/lib/topologies/server.js:336:35)
+    at Pool.emit (events.js:198:13)
+    at Connection.<anonymous> (/home/ubuntu/dev/chat21-server/node_modules/mongodb-core/lib/connection/pool.js:280:12)
+    at Object.onceWrapper (events.js:286:20)
+    at Connection.emit (events.js:198:13)
+    at Socket.<anonymous> (/home/ubuntu/dev/chat21-server/node_modules/mongodb-core/lib/connection/connection.js:189:49)
+    at Object.onceWrapper (events.js:286:20)
+    at Socket.emit (events.js:198:13)
+    at emitErrorNT (internal/streams/destroy.js:91:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:59:3)
+    at process._tickCallback (internal/process/next_tick.js:63:19) {"error":{"name":"MongoError","message":"failed to connect to server [localhost:27017] on first connect [MongoError: connect ECONNREFUSED 127.0.0.1:27017]"},"stack":"MongoError: failed to connect to server [localhost:27017] on first connect [MongoError: connect ECONNREFUSED 127.0.0.1:27017]\n    at Pool.<anonymous> (/home/ubuntu/dev/chat21-server/node_modules/mongodb-core/lib/topologies/server.js:336:35)\n    at Pool.emit (events.js:198:13)\n    at Connection.<anonymous> (/home/ubuntu/dev/chat21-server/node_modules/mongodb-core/lib/connection/pool.js:280:12)\n    at Object.onceWrapper (events.js:286:20)\n    at Connection.emit (events.js:198:13)\n    at Socket.<anonymous> (/home/ubuntu/dev/chat21-server/node_modules/mongodb-core/lib/connection/connection.js:189:49)\n    at Object.onceWrapper (events.js:286:20)\n    at Socket.emit (events.js:198:13)\n    at emitErrorNT (internal/streams/destroy.js:91:8)\n    at emitErrorAndCloseNT (internal/streams/destroy.js:59:3)\n    at process._tickCallback (internal/process/next_tick.js:63:19)","exception":true,"date":"Mon Oct 28 2019 17:44:24 GMT+0000 (Coordinated Universal Time)","process":{"pid":2780,"uid":1000,"gid":1000,"cwd":"/home/ubuntu/dev/chat21-server","execPath":"/usr/bin/node","version":"v10.17.0","argv":["/usr/bin/node","/home/ubuntu/dev/chat21-server/bin/www"],"memoryUsage":{"rss":54378496,"heapTotal":34848768,"heapUsed":16957440,"external":18351869}},"os":{"loadavg":[0.08935546875,0.14013671875,0.087890625],"uptime":434},"trace":[{"column":35,"file":"/home/ubuntu/dev/chat21-server/node_modules/mongodb-core/lib/topologies/server.js","function":null,"line":336,"method":null,"native":false},{"column":13,"file":"events.js","function":"Pool.emit","line":198,"method":"emit","native":false},{"column":12,"file":"/home/ubuntu/dev/chat21-server/node_modules/mongodb-core/lib/connection/pool.js","function":null,"line":280,"method":null,"native":false},{"column":20,"file":"events.js","function":"Object.onceWrapper","line":286,"method":"onceWrapper","native":false},{"column":13,"file":"events.js","function":"Connection.emit","line":198,"method":"emit","native":false},{"column":49,"file":"/home/ubuntu/dev/chat21-server/node_modules/mongodb-core/lib/connection/connection.js","function":null,"line":189,"method":null,"native":false},{"column":20,"file":"events.js","function":"Object.onceWrapper","line":286,"method":"onceWrapper","native":false},{"column":13,"file":"events.js","function":"Socket.emit","line":198,"method":"emit","native":false},{"column":8,"file":"internal/streams/destroy.js","function":"emitErrorNT","line":91,"method":null,"native":false},{"column":3,"file":"internal/streams/destroy.js","function":"emitErrorAndCloseNT","line":59,"method":null,"native":false},{"column":19,"file":"internal/process/next_tick.js","function":"process._tickCallback","line":63,"method":"_tickCallback","native":false}]}
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:45:06 +0000] "GET / HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:45:06 +0000] "GET /favicon.ico HTTP/1.1" 404 24 "http://34.243.13.52:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:45:51 +0000] "GET /public/wstest/index.html HTTP/1.1" 404 37 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:48:52 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:48:59 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:49:05 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:49:09 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:49:14 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:49:22 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:49:30 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:49:35 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:49:43 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:49:48 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:49:54 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:50:01 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:50:09 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:50:16 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:50:24 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:50:30 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:50:35 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:50:42 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:50:47 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:50:54 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:51:00 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:51:06 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:51:12 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:51:18 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:51:25 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:51:30 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:51:36 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:51:43 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:51:51 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:51:58 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:52:06 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:52:11 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:52:19 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:52:24 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:52:30 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:52:37 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:52:45 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:52:52 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:52:59 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:53:05 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:53:11 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:53:19 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:53:27 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:53:36 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:53:44 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:53:49 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:53:57 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:54:04 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:54:09 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:54:17 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:54:25 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:54:34 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:54:40 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:54:46 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:54:51 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:54:59 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:55:06 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:55:14 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:55:19 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:55:25 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:55:32 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:55:39 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:55:46 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:55:55 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:56:01 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:56:09 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:56:15 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:56:22 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:56:30 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:56:38 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:56:46 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:56:52 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:56:57 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:57:03 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:57:08 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:57:15 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:57:20 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:57:26 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:57:33 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:57:39 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:57:44 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:57:50 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:57:57 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:58:04 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:58:11 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:58:19 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:58:25 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:58:33 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:58:40 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:58:44 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:58:48 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:58:53 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:59:00 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:59:06 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:59:11 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:59:16 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:59:24 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:59:29 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:59:38 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:59:43 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:59:48 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:17:59:55 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:18:00:01 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:18:00:06 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:18:00:13 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:18:00:19 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:18:00:23 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:18:00:30 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:18:00:38 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:18:00:44 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:18:00:50 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:18:00:55 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:18:01:03 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:18:01:11 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:18:01:17 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:18:01:23 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:18:01:31 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:18:01:39 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:18:01:47 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: ::ffff:91.81.98.86 - - [28/Oct/2019:18:01:51 +0000] "GET /?token=JWT%20123 HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+error: uncaughtException: server is not defined
+ReferenceError: server is not defined
+    at Object.<anonymous> (/home/ubuntu/dev/chat21-server/bin/www:28:23)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+    at startup (internal/bootstrap/node.js:283:19)
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:623:3) {"error":{},"stack":"ReferenceError: server is not defined\n    at Object.<anonymous> (/home/ubuntu/dev/chat21-server/bin/www:28:23)\n    at Module._compile (internal/modules/cjs/loader.js:778:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)\n    at Module.load (internal/modules/cjs/loader.js:653:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:585:3)\n    at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)\n    at startup (internal/bootstrap/node.js:283:19)\n    at bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)","exception":true,"date":"Mon Oct 28 2019 18:02:21 GMT+0000 (Coordinated Universal Time)","process":{"pid":3047,"uid":1000,"gid":1000,"cwd":"/home/ubuntu/dev/chat21-server","execPath":"/usr/bin/node","version":"v10.17.0","argv":["/usr/bin/node","/home/ubuntu/dev/chat21-server/bin/www"],"memoryUsage":{"rss":55656448,"heapTotal":36466688,"heapUsed":20121096,"external":19182843}},"os":{"loadavg":[0.16015625,0.033203125,0.0107421875],"uptime":1511},"trace":[{"column":23,"file":"/home/ubuntu/dev/chat21-server/bin/www","function":null,"line":28,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":778,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":789,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":653,"method":"load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"tryModuleLoad","line":593,"method":null,"native":false},{"column":3,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":585,"method":"_load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"Module.runMain","line":831,"method":"runMain","native":false},{"column":19,"file":"internal/bootstrap/node.js","function":"startup","line":283,"method":null,"native":false},{"column":3,"file":"internal/bootstrap/node.js","function":"bootstrapNodeJSCore","line":623,"method":null,"native":false}]}
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
