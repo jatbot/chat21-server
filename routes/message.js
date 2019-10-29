@@ -10,6 +10,7 @@ var messageEvent = require("../events/messageEvent");
 
 var Conversation = require("../models/conversation");
 
+
 router.post('/', function(req, res) {
 
  var newMessage = new Message({
@@ -28,25 +29,6 @@ router.post('/', function(req, res) {
       return res.status(500).send({success: false, msg: 'Error saving object.', err:err});
     }
 
-/*
-	//createConversation
-    var newConversation = new Conversation({
-    sender: savedMessage.sender_id,
-    sender_fullname: savedMessage.sender_fullname,
-    recipient: savedMessage.recipient_id,
-    recipient_fullname: savedMessage.recipient_fullname,
-    last_message_text: savedMessage.text,
-    app_id: savedMessage.app_id,
-    createdBy: savedMessage.createdBy,
-  });
-
-  newConversation.save(function(err, savedConversation) {
-    if (err) {
-      console.log(err);
-    }
-   });
-	    
-*/
 
     messageEvent.emit("message.create",savedMessage);
     res.json(savedMessage);
@@ -65,12 +47,15 @@ router.post('/', function(req, res) {
 
 router.get('/', function(req, res) {
 
-  return Message.find({"recipient": req.params.request_id, id_project: req.projectid}).sort({updatedAt: 'asc'}).exec(function(err, messages) { 
+    Message.find({"recipient": req.params.request_id, id_project: req.projectid}).sort({updatedAt: 'asc'}).exec(function(err, messages) { 
       if (err) {
 return next(err);
       }
       res.json(messages);
+
     });
+
 });
+
 
 module.exports = router;
