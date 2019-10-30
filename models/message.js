@@ -47,7 +47,11 @@ var MessageSchema = new Schema({
   createdBy: {
     type: String,
     required: true
-  }
+  },
+  timelineOf: {
+    type: String,
+    required: true
+  },
 },{
   timestamps: true
 }
