@@ -42,14 +42,16 @@ var ConversationSchema = new Schema({
   channel_type: {
     type: String,
     required: true,
-    index: true
+    index: true,
+    default: "direct"
   },
 
 
   type: {
     type: String,
     required: true,
-    index: true
+    index: true,
+    default: "text"
   },
 
   attributes: {
