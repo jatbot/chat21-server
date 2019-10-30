@@ -1708,3 +1708,156 @@ info: ::ffff:91.81.98.86 - - [29/Oct/2019:18:05:33 +0000] "GET /favicon.ico HTTP
 info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
 info: autoIndex: true
 info: message2Event init
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+info: ::ffff:91.81.98.86 - - [30/Oct/2019:17:44:40 +0000] "GET /favicon.ico HTTP/1.1" 404 24 "http://52.50.195.23:3000/wstest/index.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
+
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+info: ::ffff:34.234.214.93 - - [30/Oct/2019:17:52:08 +0000] "POST /messages HTTP/1.1" 500 705 "-" "-"
+
+info: ::ffff:34.234.214.93 - - [30/Oct/2019:17:53:59 +0000] "POST /messages HTTP/1.1" 500 705 "-" "-"
+
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+error: uncaughtException: Conversation is not defined
+ReferenceError: Conversation is not defined
+    at MessageEvent.<anonymous> (/home/ubuntu/dev/chat21-server/events/messageEvent.js:29:26)
+    at MessageEvent.emit (events.js:203:15)
+    at /home/ubuntu/dev/chat21-server/routes/message.js:36:18
+    at /home/ubuntu/dev/chat21-server/node_modules/mongoose/lib/model.js:4074:16
+    at /home/ubuntu/dev/chat21-server/node_modules/mongoose/lib/services/model/applyHooks.js:170:20
+    at process._tickCallback (internal/process/next_tick.js:61:11) {"error":{},"stack":"ReferenceError: Conversation is not defined\n    at MessageEvent.<anonymous> (/home/ubuntu/dev/chat21-server/events/messageEvent.js:29:26)\n    at MessageEvent.emit (events.js:203:15)\n    at /home/ubuntu/dev/chat21-server/routes/message.js:36:18\n    at /home/ubuntu/dev/chat21-server/node_modules/mongoose/lib/model.js:4074:16\n    at /home/ubuntu/dev/chat21-server/node_modules/mongoose/lib/services/model/applyHooks.js:170:20\n    at process._tickCallback (internal/process/next_tick.js:61:11)","exception":true,"date":"Wed Oct 30 2019 17:58:22 GMT+0000 (Coordinated Universal Time)","process":{"pid":3643,"uid":1000,"gid":1000,"cwd":"/home/ubuntu/dev/chat21-server","execPath":"/usr/bin/node","version":"v10.17.0","argv":["/usr/bin/node","/home/ubuntu/dev/chat21-server/bin/www"],"memoryUsage":{"rss":62652416,"heapTotal":38039552,"heapUsed":23886288,"external":19793055}},"os":{"loadavg":[0.009765625,0.02099609375,0.0322265625],"uptime":958},"trace":[{"column":26,"file":"/home/ubuntu/dev/chat21-server/events/messageEvent.js","function":null,"line":29,"method":null,"native":false},{"column":15,"file":"events.js","function":"MessageEvent.emit","line":203,"method":"emit","native":false},{"column":18,"file":"/home/ubuntu/dev/chat21-server/routes/message.js","function":null,"line":36,"method":null,"native":false},{"column":16,"file":"/home/ubuntu/dev/chat21-server/node_modules/mongoose/lib/model.js","function":null,"line":4074,"method":null,"native":false},{"column":20,"file":"/home/ubuntu/dev/chat21-server/node_modules/mongoose/lib/services/model/applyHooks.js","function":null,"line":170,"method":null,"native":false},{"column":11,"file":"internal/process/next_tick.js","function":"process._tickCallback","line":61,"method":"_tickCallback","native":false}]}
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+error: uncaughtException: savedMessage is not defined
+ReferenceError: savedMessage is not defined
+    at MessageEvent.<anonymous> (/home/ubuntu/dev/chat21-server/events/messageEvent.js:29:199)
+    at MessageEvent.emit (events.js:203:15)
+    at /home/ubuntu/dev/chat21-server/routes/message.js:36:18
+    at /home/ubuntu/dev/chat21-server/node_modules/mongoose/lib/model.js:4074:16
+    at /home/ubuntu/dev/chat21-server/node_modules/mongoose/lib/services/model/applyHooks.js:170:20
+    at process._tickCallback (internal/process/next_tick.js:61:11) {"error":{},"stack":"ReferenceError: savedMessage is not defined\n    at MessageEvent.<anonymous> (/home/ubuntu/dev/chat21-server/events/messageEvent.js:29:199)\n    at MessageEvent.emit (events.js:203:15)\n    at /home/ubuntu/dev/chat21-server/routes/message.js:36:18\n    at /home/ubuntu/dev/chat21-server/node_modules/mongoose/lib/model.js:4074:16\n    at /home/ubuntu/dev/chat21-server/node_modules/mongoose/lib/services/model/applyHooks.js:170:20\n    at process._tickCallback (internal/process/next_tick.js:61:11)","exception":true,"date":"Wed Oct 30 2019 17:59:11 GMT+0000 (Coordinated Universal Time)","process":{"pid":3666,"uid":1000,"gid":1000,"cwd":"/home/ubuntu/dev/chat21-server","execPath":"/usr/bin/node","version":"v10.17.0","argv":["/usr/bin/node","/home/ubuntu/dev/chat21-server/bin/www"],"memoryUsage":{"rss":63115264,"heapTotal":38039552,"heapUsed":23923160,"external":19793055}},"os":{"loadavg":[0.0029296875,0.01611328125,0.02734375],"uptime":1007},"trace":[{"column":199,"file":"/home/ubuntu/dev/chat21-server/events/messageEvent.js","function":null,"line":29,"method":null,"native":false},{"column":15,"file":"events.js","function":"MessageEvent.emit","line":203,"method":"emit","native":false},{"column":18,"file":"/home/ubuntu/dev/chat21-server/routes/message.js","function":null,"line":36,"method":null,"native":false},{"column":16,"file":"/home/ubuntu/dev/chat21-server/node_modules/mongoose/lib/model.js","function":null,"line":4074,"method":null,"native":false},{"column":20,"file":"/home/ubuntu/dev/chat21-server/node_modules/mongoose/lib/services/model/applyHooks.js","function":null,"line":170,"method":null,"native":false},{"column":11,"file":"internal/process/next_tick.js","function":"process._tickCallback","line":61,"method":"_tickCallback","native":false}]}
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+info: messageEvent websocket server  {"$__":{"strictMode":true,"inserting":true,"getters":{},"_id":"5db9cfba659c650e648fd478","wasPopulated":false,"activePaths":{"paths":{"timelineOf":"require","createdBy":"require","status":"require","type":"require","app_id":"require","text":"require","recipient_id":"require","sender_id":"require"},"states":{"ignore":{},"default":{},"init":{},"modify":{},"require":{"timelineOf":true,"createdBy":true,"status":true,"type":true,"app_id":true,"text":true,"recipient_id":true,"sender_id":true}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"emitter":{"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":true},"isNew":false,"_doc":{"type":"direct","_id":"5db9cfba659c650e648fd478","status":"sent","timelineOf":"123","createdBy":"123","app_id":"123","text":"123","recipient_id":"RFN","sender_fullname":"SFN","sender_id":"123","createdAt":"2019-10-30T18:00:26.983Z","updatedAt":"2019-10-30T18:00:26.983Z","__v":0}}
+info: ::ffff:127.0.0.1 - - [30/Oct/2019:18:00:27 +0000] "POST /messages HTTP/1.1" 200 280 "-" "curl/7.58.0"
+
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+info: messageEvent websocket server  {"$__":{"strictMode":true,"inserting":true,"getters":{},"_id":"5db9d008f3b85a0e88866b67","wasPopulated":false,"activePaths":{"paths":{"timelineOf":"require","createdBy":"require","status":"require","type":"require","app_id":"require","text":"require","recipient_id":"require","sender_id":"require"},"states":{"ignore":{},"default":{},"init":{},"modify":{},"require":{"timelineOf":true,"createdBy":true,"status":true,"type":true,"app_id":true,"text":true,"recipient_id":true,"sender_id":true}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"emitter":{"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":true},"isNew":false,"_doc":{"type":"direct","_id":"5db9d008f3b85a0e88866b67","status":"sent","timelineOf":"123","createdBy":"123","app_id":"123","text":"123","recipient_id":"RFN","sender_fullname":"SFN","sender_id":"123","createdAt":"2019-10-30T18:01:44.967Z","updatedAt":"2019-10-30T18:01:44.967Z","__v":0}}
+info: ::ffff:127.0.0.1 - - [30/Oct/2019:18:01:45 +0000] "POST /messages HTTP/1.1" 200 280 "-" "curl/7.58.0"
+
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+info: messageEvent websocket server  {"$__":{"strictMode":true,"inserting":true,"getters":{},"_id":"5db9d0c5e6e8f20ead0db2ef","wasPopulated":false,"activePaths":{"paths":{"timelineOf":"require","createdBy":"require","status":"require","channel_type":"require","type":"require","app_id":"require","text":"require","recipient_id":"require","sender_id":"require"},"states":{"ignore":{},"default":{},"init":{},"modify":{},"require":{"timelineOf":true,"createdBy":true,"status":true,"channel_type":true,"type":true,"app_id":true,"text":true,"recipient_id":true,"sender_id":true}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"emitter":{"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":true},"isNew":false,"_doc":{"type":"text","channel_type":"direct","_id":"5db9d0c5e6e8f20ead0db2ef","status":"sent","timelineOf":"123","createdBy":"123","app_id":"123","text":"123","recipient_id":"RFN","sender_fullname":"SFN","sender_id":"123","createdAt":"2019-10-30T18:04:53.423Z","updatedAt":"2019-10-30T18:04:53.423Z","__v":0}}
+info: ::ffff:127.0.0.1 - - [30/Oct/2019:18:04:53 +0000] "POST /messages HTTP/1.1" 200 302 "-" "curl/7.58.0"
+
+info: messageEvent websocket server  {"$__":{"strictMode":true,"inserting":true,"getters":{},"_id":"5db9d0f6e6e8f20ead0db2f1","wasPopulated":false,"activePaths":{"paths":{"timelineOf":"require","createdBy":"require","status":"require","channel_type":"require","type":"require","app_id":"require","text":"require","recipient_id":"require","sender_id":"require"},"states":{"ignore":{},"default":{},"init":{},"modify":{},"require":{"timelineOf":true,"createdBy":true,"status":true,"channel_type":true,"type":true,"app_id":true,"text":true,"recipient_id":true,"sender_id":true}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"emitter":{"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":true},"isNew":false,"_doc":{"type":"text","channel_type":"direct","_id":"5db9d0f6e6e8f20ead0db2f1","status":"sent","timelineOf":"123","createdBy":"123","app_id":"123","text":"text","recipient_id":"RFN","sender_fullname":"SFN","sender_id":"123","createdAt":"2019-10-30T18:05:42.023Z","updatedAt":"2019-10-30T18:05:42.023Z","__v":0}}
+info: ::ffff:127.0.0.1 - - [30/Oct/2019:18:05:42 +0000] "POST /messages HTTP/1.1" 200 303 "-" "curl/7.58.0"
+
+info: messageEvent websocket server  {"$__":{"strictMode":true,"inserting":true,"getters":{},"_id":"5db9d125e6e8f20ead0db2f3","wasPopulated":false,"activePaths":{"paths":{"timelineOf":"require","createdBy":"require","status":"require","channel_type":"require","type":"require","app_id":"require","text":"require","recipient_id":"require","sender_id":"require"},"states":{"ignore":{},"default":{},"init":{},"modify":{},"require":{"timelineOf":true,"createdBy":true,"status":true,"channel_type":true,"type":true,"app_id":true,"text":true,"recipient_id":true,"sender_id":true}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"emitter":{"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":true},"isNew":false,"_doc":{"type":"text","channel_type":"direct","_id":"5db9d125e6e8f20ead0db2f3","status":"sent","timelineOf":"123","createdBy":"123","app_id":"123","text":"text","recipient_id":"RFN","sender_fullname":"SFN","sender_id":"123","createdAt":"2019-10-30T18:06:29.848Z","updatedAt":"2019-10-30T18:06:29.848Z","__v":0}}
+info: ::ffff:127.0.0.1 - - [30/Oct/2019:18:06:29 +0000] "POST /messages HTTP/1.1" 200 303 "-" "curl/7.58.0"
+
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+error: uncaughtException: Unexpected token :
+/home/ubuntu/dev/chat21-server/routes/message.js:19
+    sender_id: req.body.sender_id,
+             ^
+
+SyntaxError: Unexpected token :
+    at Module._compile (internal/modules/cjs/loader.js:723:23)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/dev/chat21-server/app.js:39:15)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/ubuntu/dev/chat21-server/bin/www:7:11) {"error":{},"stack":"/home/ubuntu/dev/chat21-server/routes/message.js:19\n    sender_id: req.body.sender_id,\n             ^\n\nSyntaxError: Unexpected token :\n    at Module._compile (internal/modules/cjs/loader.js:723:23)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)\n    at Module.load (internal/modules/cjs/loader.js:653:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:585:3)\n    at Module.require (internal/modules/cjs/loader.js:692:17)\n    at require (internal/modules/cjs/helpers.js:25:18)\n    at Object.<anonymous> (/home/ubuntu/dev/chat21-server/app.js:39:15)\n    at Module._compile (internal/modules/cjs/loader.js:778:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)\n    at Module.load (internal/modules/cjs/loader.js:653:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:585:3)\n    at Module.require (internal/modules/cjs/loader.js:692:17)\n    at require (internal/modules/cjs/helpers.js:25:18)\n    at Object.<anonymous> (/home/ubuntu/dev/chat21-server/bin/www:7:11)","exception":true,"date":"Wed Oct 30 2019 18:10:25 GMT+0000 (Coordinated Universal Time)","process":{"pid":3839,"uid":1000,"gid":1000,"cwd":"/home/ubuntu/dev/chat21-server","execPath":"/usr/bin/node","version":"v10.17.0","argv":["/usr/bin/node","/home/ubuntu/dev/chat21-server/bin/www"],"memoryUsage":{"rss":53841920,"heapTotal":34848768,"heapUsed":15612000,"external":18297099}},"os":{"loadavg":[0.0224609375,0.009765625,0],"uptime":1681},"trace":[{"column":23,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":723,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":789,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":653,"method":"load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"tryModuleLoad","line":593,"method":null,"native":false},{"column":3,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":585,"method":"_load","native":false},{"column":17,"file":"internal/modules/cjs/loader.js","function":"Module.require","line":692,"method":"require","native":false},{"column":18,"file":"internal/modules/cjs/helpers.js","function":"require","line":25,"method":null,"native":false},{"column":15,"file":"/home/ubuntu/dev/chat21-server/app.js","function":null,"line":39,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":778,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":789,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":653,"method":"load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"tryModuleLoad","line":593,"method":null,"native":false},{"column":3,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":585,"method":"_load","native":false},{"column":17,"file":"internal/modules/cjs/loader.js","function":"Module.require","line":692,"method":"require","native":false},{"column":18,"file":"internal/modules/cjs/helpers.js","function":"require","line":25,"method":null,"native":false},{"column":11,"file":"/home/ubuntu/dev/chat21-server/bin/www","function":null,"line":7,"method":null,"native":false}]}
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+info: messageEvent websocket server  {"$__":{"strictMode":true,"inserting":true,"getters":{},"_id":"5db9d2895e1bff0f16924ea5","wasPopulated":false,"activePaths":{"paths":{"timelineOf":"require","createdBy":"require","status":"require","channel_type":"require","type":"require","app_id":"require","text":"require","recipient_id":"require","sender_id":"require","message_id":"require"},"states":{"ignore":{},"default":{},"init":{},"modify":{},"require":{"timelineOf":true,"createdBy":true,"status":true,"channel_type":true,"type":true,"app_id":true,"text":true,"recipient_id":true,"sender_id":true,"message_id":true}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"emitter":{"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":true},"isNew":false,"_doc":{"type":"text","channel_type":"direct","_id":"5db9d2895e1bff0f16924ea5","status":"sent","timelineOf":"123","createdBy":"123","app_id":"123","text":"text","recipient_id":"RFN","sender_fullname":"SFN","sender_id":"123","message_id":"73f86008-3c9a-48eb-b46f-37ba656656ff","createdAt":"2019-10-30T18:12:25.048Z","updatedAt":"2019-10-30T18:12:25.048Z","__v":0}}
+info: ::ffff:127.0.0.1 - - [30/Oct/2019:18:12:25 +0000] "POST /messages HTTP/1.1" 200 355 "-" "curl/7.58.0"
+
+info: messageEvent websocket server  {"$__":{"strictMode":true,"inserting":true,"getters":{},"_id":"5db9d2ac5e1bff0f16924ea7","wasPopulated":false,"activePaths":{"paths":{"timelineOf":"require","createdBy":"require","status":"require","channel_type":"require","type":"require","app_id":"require","text":"require","recipient_id":"require","sender_id":"require","message_id":"require"},"states":{"ignore":{},"default":{},"init":{},"modify":{},"require":{"timelineOf":true,"createdBy":true,"status":true,"channel_type":true,"type":true,"app_id":true,"text":true,"recipient_id":true,"sender_id":true,"message_id":true}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"emitter":{"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":true},"isNew":false,"_doc":{"type":"text","channel_type":"direct","_id":"5db9d2ac5e1bff0f16924ea7","status":"sent","timelineOf":"123","createdBy":"123","app_id":"123","text":"text","recipient_id":"RFN","sender_fullname":"SFN","sender_id":"123","message_id":"326a62c2-7ee8-4869-aa6b-d6a34d795296","createdAt":"2019-10-30T18:13:00.810Z","updatedAt":"2019-10-30T18:13:00.810Z","__v":0}}
+info: ::ffff:127.0.0.1 - - [30/Oct/2019:18:13:00 +0000] "POST /messages HTTP/1.1" 200 355 "-" "curl/7.58.0"
+
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+info: messageEvent websocket server  {"$__":{"strictMode":true,"inserting":true,"getters":{},"_id":"5db9d467298f3c0f7bee59da","wasPopulated":false,"activePaths":{"paths":{"timelineOf":"require","createdBy":"require","status":"require","channel_type":"require","type":"require","app_id":"require","text":"require","recipient_id":"require","sender_id":"require","message_id":"require"},"states":{"ignore":{},"default":{},"init":{},"modify":{},"require":{"timelineOf":true,"createdBy":true,"status":true,"channel_type":true,"type":true,"app_id":true,"text":true,"recipient_id":true,"sender_id":true,"message_id":true}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"emitter":{"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":true},"isNew":false,"_doc":{"type":"text","channel_type":"direct","_id":"5db9d467298f3c0f7bee59da","status":"sent","timelineOf":"123","createdBy":"123","app_id":"123","text":"text","recipient_id":"RFN","sender_fullname":"SFN","sender_id":"123","message_id":"f9e0e157-e3d2-4099-a882-592cf29c064e","createdAt":"2019-10-30T18:20:23.817Z","updatedAt":"2019-10-30T18:20:23.817Z","__v":0}}
+info: ::ffff:127.0.0.1 - - [30/Oct/2019:18:20:23 +0000] "POST /messages HTTP/1.1" 200 355 "-" "curl/7.58.0"
+
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+info: messageEvent websocket server  {"$__":{"strictMode":true,"inserting":true,"getters":{},"_id":"5db9d6f640419b0f9a565633","wasPopulated":false,"activePaths":{"paths":{"timelineOf":"require","createdBy":"require","status":"require","channel_type":"require","type":"require","app_id":"require","text":"require","recipient_id":"require","sender_id":"require","message_id":"require"},"states":{"ignore":{},"default":{},"init":{},"modify":{},"require":{"timelineOf":true,"createdBy":true,"status":true,"channel_type":true,"type":true,"app_id":true,"text":true,"recipient_id":true,"sender_id":true,"message_id":true}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"emitter":{"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":true},"isNew":false,"_doc":{"type":"text","channel_type":"direct","_id":"5db9d6f640419b0f9a565633","status":"sent","timelineOf":"123","createdBy":"123","app_id":"123","text":"text","recipient_id":"RFN","sender_fullname":"SFN","sender_id":"123","message_id":"0e966534-58d8-4857-8f6b-d54e6be3bc38","createdAt":"2019-10-30T18:31:18.492Z","updatedAt":"2019-10-30T18:31:18.492Z","__v":0}}
+info: ::ffff:127.0.0.1 - - [30/Oct/2019:18:31:18 +0000] "POST /messages HTTP/1.1" 200 355 "-" "curl/7.58.0"
+
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+info: ::ffff:127.0.0.1 - - [30/Oct/2019:18:38:00 +0000] "POST /messages HTTP/1.1" 500 424 "-" "curl/7.58.0"
+
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+info: messageEvent websocket server  {"$__":{"strictMode":true,"inserting":true,"getters":{},"_id":"5db9d8e072cf2310108faa65","wasPopulated":false,"activePaths":{"paths":{"timelineOf":"require","createdBy":"require","status":"require","channel_type":"require","type":"require","app_id":"require","text":"require","recipient_id":"require","sender_id":"require","message_id":"require"},"states":{"ignore":{},"default":{},"init":{},"modify":{},"require":{"timelineOf":true,"createdBy":true,"status":true,"channel_type":true,"type":true,"app_id":true,"text":true,"recipient_id":true,"sender_id":true,"message_id":true}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"emitter":{"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":true},"isNew":false,"_doc":{"type":"text","channel_type":"direct","_id":"5db9d8e072cf2310108faa65","status":"100","timelineOf":"123","createdBy":"123","app_id":"123","text":"text","recipient_id":"RFN","sender_fullname":"SFN","sender_id":"123","message_id":"51074dc8-d69c-4f96-bf0d-24025dfa0aca","createdAt":"2019-10-30T18:39:28.132Z","updatedAt":"2019-10-30T18:39:28.132Z","__v":0}}
+info: ::ffff:127.0.0.1 - - [30/Oct/2019:18:39:28 +0000] "POST /messages HTTP/1.1" 200 354 "-" "curl/7.58.0"
+

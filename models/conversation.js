@@ -63,7 +63,16 @@ var ConversationSchema = new Schema({
   createdBy: {
     type: String,
     required: true
-  }
+  },
+   timelineOf: {                                                                                                                                                                               
+    type: String,
+    required: true,
+    index: true                                                                                                                                                       
+                            
+},        
+
+
+
 },{
   timestamps: true
 }
