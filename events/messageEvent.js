@@ -13,21 +13,72 @@ const messageEvent = new MessageEvent();
 
 messageEvent.on('message.create', function(message) {
 
+ winston.info("messageEvent.emit");
+
+   if (message.status === MessageConstants.CHAT_MESSAGE_STATUS.SENDING) { 
+       winston.info("messageEvent.emit message.sending", message); 
+      messageEvent.emit('message.sending', message);                                                             
+   }      
+
+
+   if (message.status === MessageConstants.CHAT_MESSAGE_STATUS.SENT) {  
+       winston.debug("messageEvent.emit message.sent", message);      
+       messageEvent.emit('message.sent', message);      
+   }       
+
+
+   if (message.status === MessageConstants.CHAT_MESSAGE_STATUS.DELIVERED) {    
+      winston.debug("messageEvent.emit message.delivered", message);  
+      messageEvent.emit('message.delivered', message);      
+   }   
+
+
+
+
+
   if (message.status === MessageConstants.CHAT_MESSAGE_STATUS.RECEIVED) {
     winston.debug("messageEvent.emit message.received", message);
     messageEvent.emit('message.received', message);
   }
 
+/*
   if (message.status === MessageConstants.CHAT_MESSAGE_STATUS.SENDING) {
     winston.debug("messageEvent.emit message.sending", message);
     messageEvent.emit('message.sending', message);
   }
-
+*/
 });
 
+
+messageEvent.on('message.sent', function(message) {
+
+  var timelineNewMessageClone = Object.assign({}, message);
+
+  var timelineNewMessage = new Message(timelineNewMessageClone);
+
+  var path = "/apps/" + message.app_id + "/users/" + message.recipient_id + "/messages/" + message.sender_id + "/" + message.message_id;  
+  winston.info("path send timeline: " + path);
+
+  timelineNewMessage.path = path;
+  timelineNewMessage.status =  MessageConstants.CHAT_MESSAGE_STATUS.DELIVERED;
+
+  timelineNewMessage.save(function(err, savedMessage) {
+    if (err) {
+      console.log(err);
+      return res.status(500).send({success: false, msg: 'Error saving timeline object.', err:err});
+    }
+
+    console.log("new timeline message", savedMessage);
+    messageEvent.emit("message.create",savedMessage);
+   });
+});
+
+
 messageEvent.on('message.create', function(message) {
+
+ winston.info("create conv for msg ", message.toJSON());
+
    var newMessage = true;
-   var timelineOf = message.sender_id;
 
    var newConversation = new Conversation({                                                                                                                                                 
     sender: message.sender_id,
@@ -42,16 +93,16 @@ messageEvent.on('message.create', function(message) {
     type: message.type,
     createdBy: message.createdBy,
     attributes: message.attributes,
-    timelineOf: timelineOf
+    path: message.path
     });                              
 
-   var query = {timelineOf: timelineOf},
+   var query = {path: message.path},
     options = { upsert: true, new: true, setDefaultsOnInsert: true };
 
 // Find the document
-  Conversation.findOneAndUpdate(query, newConversation, options, function(err, savedConversation) {
+//  Conversation.findOneAndUpdate(query, newConversation, options, function(err, savedConversation) {
 
-  //newConversation.save(function(err, savedConversation) {                                                                                      
+  newConversation.save(function(err, savedConversation) {                                                                                      
   if (err) {
         console.log(err);
       }

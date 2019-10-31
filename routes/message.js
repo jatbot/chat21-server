@@ -14,6 +14,10 @@ const uuidv4 = require('uuid/v4');
 //curl -X POST -H 'Content-Type: application/json' -d '{"sender_id":"123", "sender_fullname":"SFN", "recipient_id":"RFN", "text": "123", "app_id":"123"}' http://localhost:3000/messages
 
 router.post('/', function(req, res) {
+ var messageId = uuidv4();
+
+ var path = "/apps/"+req.body.app_id + "/users/" + req.body.sender_id + "/messages/" + req.body.recipient_id + "/" + messageId;
+ winston.info("path: " + path);
 
  var newMessage = new Message({
     message_id: uuidv4(),
@@ -24,7 +28,7 @@ router.post('/', function(req, res) {
     text: req.body.text,
     app_id: req.body.app_id,
     createdBy: req.body.sender_id,
-    timelineOf: req.body.sender_id,
+    path: path,
     status: MessageConstants.CHAT_MESSAGE_STATUS.SENT
   });
 

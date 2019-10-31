@@ -65,7 +65,8 @@ var MessageSchema = new Schema({
     type: String,
     required: true
   },
-  timelineOf: {
+//  timelineOf: {
+  path: {
     type: String,
     required: true,
     index: true
