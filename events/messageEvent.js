@@ -52,11 +52,13 @@ messageEvent.on('message.create', function(message) {
 
 messageEvent.on('message.sent', function(message) {
 
-  var timelineNewMessageClone = Object.assign({}, message);
+  var timelineNewMessageClone = Object.assign({}, message.toObject());
+  delete timelineNewMessageClone._id;
 
   var timelineNewMessage = new Message(timelineNewMessageClone);
 
-  var path = "/apps/" + message.app_id + "/users/" + message.recipient_id + "/messages/" + message.sender_id + "/" + message.message_id;  
+  //var path = "/apps/" + message.app_id + "/users/" + message.recipient_id + "/messages/" + message.sender_id + "/" + message.message_id;  
+  var path = "/apps/" + message.app_id + "/users/" + message.recipient_id + "/messages/" + message.sender_id; 
   winston.info("path send timeline: " + path);
 
   timelineNewMessage.path = path;
@@ -68,7 +70,7 @@ messageEvent.on('message.sent', function(message) {
       return res.status(500).send({success: false, msg: 'Error saving timeline object.', err:err});
     }
 
-    console.log("new timeline message", savedMessage);
+    console.log("new timeline message", savedMessage.toObject());
     messageEvent.emit("message.create",savedMessage);
    });
 });
@@ -76,11 +78,19 @@ messageEvent.on('message.sent', function(message) {
 
 messageEvent.on('message.create', function(message) {
 
- winston.info("create conv for msg ", message.toJSON());
+ winston.info("create conv for msg ", message.toObject());
 
    var newMessage = true;
+   if (message.status = MessageConstants.CHAT_MESSAGE_STATUS.SENDING){
+      newMessage = false;
+   }
 
-   var newConversation = new Conversation({                                                                                                                                                 
+
+  //var path = "/apps/"+message.app_id + "/users/" + message.sender_id + "/messages/" + req.body.recipient_id + "/" + messageId;
+  //winston.info("path: " + path);
+
+   //var newConversation = new Conversation({                                                                                                                                                 
+    var newConversation ={                                                                                                                                                 
     sender: message.sender_id,
     sender_fullname: message.sender_fullname,
     recipient: message.recipient_id,
@@ -94,19 +104,19 @@ messageEvent.on('message.create', function(message) {
     createdBy: message.createdBy,
     attributes: message.attributes,
     path: message.path
-    });                              
+    };                              
 
    var query = {path: message.path},
     options = { upsert: true, new: true, setDefaultsOnInsert: true };
 
 // Find the document
-//  Conversation.findOneAndUpdate(query, newConversation, options, function(err, savedConversation) {
+Conversation.findOneAndUpdate(query, newConversation, options, function(err, savedConversation) {
 
-  newConversation.save(function(err, savedConversation) {                                                                                      
+  //newConversation.save(function(err, savedConversation) {                                                                                      
   if (err) {
         console.log(err);
       }
-        console.log("saved conversation", savedConversation);
+        console.log("saved conversation", savedConversation.toObject());
 
    });
 

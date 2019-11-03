@@ -11,16 +11,17 @@ var messageEvent = require("../events/messageEvent");
 var Conversation = require("../models/conversation");
 const uuidv4 = require('uuid/v4');
 
-//curl -X POST -H 'Content-Type: application/json' -d '{"sender_id":"123", "sender_fullname":"SFN", "recipient_id":"RFN", "text": "123", "app_id":"123"}' http://localhost:3000/messages
+//curl -X POST -H 'Content-Type: application/json' -d '{"sender_id":"123", "sender_fullname":"SFN", "recipient_id":"RFN", "text": "123", "app_id":"123"}' http://localhost:3200/messages
 
 router.post('/', function(req, res) {
  var messageId = uuidv4();
 
- var path = "/apps/"+req.body.app_id + "/users/" + req.body.sender_id + "/messages/" + req.body.recipient_id + "/" + messageId;
+ var path = "/apps/"+req.body.app_id + "/users/" + req.body.sender_id + "/messages/" + req.body.recipient_id;
+//  var path = "/apps/"+req.body.app_id + "/users/" + req.body.sender_id + "/messages/" + req.body.recipient_id + "/" + messageId;
  winston.info("path: " + path);
 
  var newMessage = new Message({
-    message_id: uuidv4(),
+    message_id: messageId,
     sender_id: req.body.sender_id,
     sender_fullname: req.body.sender_fullname,
     recipient_id: req.body.recipient_id,
@@ -38,7 +39,7 @@ router.post('/', function(req, res) {
       return res.status(500).send({success: false, msg: 'Error saving object.', err:err});
     }
 
-    console.log("new message", savedMessage);
+    console.log("new message", savedMessage.toObject());
     messageEvent.emit("message.create",savedMessage);
     res.json(savedMessage);
   });
