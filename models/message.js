@@ -2,25 +2,35 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var MessageSchema = new Schema({
+  message_id: {
+    type: String,
+    required: true,
+    index: true,
+  },
   sender_id: {
     type: String,
-    required: true
+    required: true,
+    index: true
   },
   sender_fullname: {
     type: String,
-    required: false
+    required: false,
+    index: true
   },
   recipient_id: {
     type: String,
-    required: true
+    required: true,
+    index: true
   },
   recipient_fullname: {
     type: String,
-    required: false
+    required: false,
+    index: true
   },
   text: {
     type: String,
-    required: true
+    required: true,
+    index: true
   },
   app_id: {
     type: String,
@@ -28,6 +38,12 @@ var MessageSchema = new Schema({
     index: true
   },
   type: {
+    type: String,
+    required: true,
+    index: true,
+    default: "text"
+  },
+  channel_type : {
     type: String,
     required: true,
     index: true,
@@ -49,9 +65,11 @@ var MessageSchema = new Schema({
     type: String,
     required: true
   },
-  timelineOf: {
+//  timelineOf: {
+  path: {
     type: String,
-    required: true
+    required: true,
+    index: true
   },
 },{
   timestamps: true
