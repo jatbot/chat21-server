@@ -80,8 +80,8 @@ class Tilebase {
                                 //         message.data);
                             }
                             
-                            if (json && json.data && that.isArray(json.data)) {
-                                json.data.forEach(element => {
+                            if (json && json.payload  && json.payload.message && that.isArray(json.payload.message)) {
+                                json.payload.message.forEach(element => {
                                    // console.log("element", element);
                                     let insUp = that.insertOrUpdate(element);
 
@@ -99,7 +99,7 @@ class Tilebase {
                                     // $('#messages').after(element.text + '<br>');
                                 });
                             }else {
-                                let insUp = that.insertOrUpdate(json);
+                                let insUp = that.insertOrUpdate(json.payload.message);
 
                                 var object = {event: json.event, data: json};
 

@@ -9,16 +9,29 @@
                 
                 
                 // var 
-                tilebase = new Tilebase('ws://localhost:3200/?token=JWT 123'             
+                var url = 'ws://localhost:3200/?token=JWT 123';
+                tilebaseConv = new Tilebase(  url           
                     , function(data, notification) {
-                        $('#messages').append(`<div>${data.payload.message}</div>`);
+                        $('#conversations').append(`<div>${data.last_message_text}</div>`);
                     }
                     , function(object, notification) {
                         //$('#'+data._id).html(`<div>${data.text}  </div>`);
                     }
                     );
+                    tilebaseConv.start('{ "action": "subscribe", "payload": { "topic": "/apps/123/users/sendid/conversations/RFN"}}');
 
-                    tilebase.start('{ "action": "subscribe", "payload": { "topic": "/apps/123/users/sendid/conversations/RFN"}}');
+
+                tilebaseConv = new Tilebase(url
+                    , function(data, notification) {
+                        $('#messages').append(`<div>${data.text}</div>`);
+                    }
+                    , function(object, notification) {
+                        //$('#'+data._id).html(`<div>${data.text}  </div>`);
+                    }
+                    );
+                    tilebaseConv.start('{ "action": "subscribe", "payload": { "topic": "/apps/123/users/sendid/messages/RFN"}}');
+
+
 		    //tilebase.start('{ "action": "subscribe", "payload": { "topic": "/apps/123/users/sendid/messages/RFN"}}');
 		    // tilebase.send('{ "action": "subscribe", "payload": { "topic": "/apps/123/users/sendid/conversations/RFN"}}');
 
@@ -36,7 +49,11 @@
                 </h1>
                 <p>
                     open console to see connection.
+                
                 </p>
+                Conversations
+                <div id="conversations"></div>
+                Messages
                 <div id="messages"></div>
                 
     </bdoy>

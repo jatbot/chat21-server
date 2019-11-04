@@ -3,7 +3,7 @@ var winston = require('../config/winston');
 var Message = require("../models/message");
 var MessageConstants = require("../models/messageConstants");
 var Conversation = require('../models/conversation');
-
+var conversationEvent = require('../events/conversationEvent');
 
 
 
@@ -83,13 +83,18 @@ messageEvent.on('message.create', function(message) {
  winston.info("create conv for msg ", message.toObject());
 
    var newMessage = true;
-   if (message.status = MessageConstants.CHAT_MESSAGE_STATUS.SENDING){
+   var path;
+   if (message.status == MessageConstants.CHAT_MESSAGE_STATUS.SENDING || message.status == MessageConstants.CHAT_MESSAGE_STATUS.SENT){
       newMessage = false;
+      path = "/apps/"+message.app_id + "/users/" + message.sender_id + "/conversations/" + message.recipient_id;
    }
+   if (message.status == MessageConstants.CHAT_MESSAGE_STATUS.DELIVERED){
+    newMessage = false;
+    path = "/apps/"+message.app_id + "/users/" + message.recipient_id + "/conversations/" + message.sender_id;
+ }
 
-
-  //var path = "/apps/"+message.app_id + "/users/" + message.sender_id + "/messages/" + req.body.recipient_id + "/" + messageId;
-  //winston.info("path: " + path);
+  //
+  winston.info("path: " + path);
 
    //var newConversation = new Conversation({                                                                                                                                                 
     var newConversation ={                                                                                                                                                 
@@ -105,12 +110,12 @@ messageEvent.on('message.create', function(message) {
     type: message.type,
     createdBy: message.createdBy,
     attributes: message.attributes,
-    path: message.path
+    path: path
     };                              
 
-   var query = {path: message.path},
+   var query = {path: path},
     options = { upsert: true, new: true, setDefaultsOnInsert: true 
-      // , rawResult:true
+       , rawResult:true
     };
 
 // Find the document
@@ -120,9 +125,14 @@ Conversation.findOneAndUpdate(query, newConversation, options, function(err, sav
   if (err) {
         console.log(err);
       }
-        //console.log("saved conversation updatedExisting", savedConversation);      
-        //console.log("saved conversation", savedConversation.value.toObject());
-        console.log("saved conversation", savedConversation.isNew, savedConversation.toObject());
+        console.log("saved conversation updatedExisting", savedConversation.lastErrorObject.updatedExisting);
+        if (savedConversation.lastErrorObject.updatedExisting==false) {
+                conversationEvent.emit("conversation.create", savedConversation.value);
+        }else {
+                conversationEvent.emit("conversation.update", savedConversation.value); 
+        }
+
+        console.log("saved conversation", savedConversation.value.toObject());
 
    });
 

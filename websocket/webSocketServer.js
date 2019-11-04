@@ -1,4 +1,5 @@
 var Message = require("../models/message");
+var Conversation = require("../models/conversation");
 const WebSocket = require('ws');
 var message2Event = require("../events/message2Event");
 var messageEvent = require("../events/messageEvent");
@@ -45,8 +46,36 @@ class WebSocketServer {
     }
 
     var onSubscribeCallback = function(id, message) {
-      winston.info('onSubscribeCallback ',id, message);
-      // check here if you can subscript o publish message
+      winston.info('onSubscribeCallback :'+id+ " "+ message);
+      winston.info('onSubscribeCallback :'+id.indexOf('/conversations/'));
+      if (id.indexOf('/conversations/')>0) {  
+        // var query = {};
+        var query = {"path": id};
+          Conversation.find(query).sort({updatedAt: 'asc'}).exec(function(err, conversations) { 
+          
+          if (err) {
+            winston.error('onSubscribeCallback find',err);  
+          }
+          winston.info('onSubscribeCallback find', conversations);  
+          pubSubServer.handlePublishMessage (id, conversations, undefined, true);                                                                                          
+    
+        });
+      }
+
+      if (id.indexOf('/messages/')>0) {  
+        // var query = {};
+        var query = {"path": id};
+          Message.find(query).sort({updatedAt: 'asc'}).exec(function(err, messages) { 
+          
+          if (err) {
+            winston.error('onSubscribeCallback find',err);  
+          }
+          winston.info('onSubscribeCallback find', messages);  
+          pubSubServer.handlePublishMessage (id, messages, undefined, true);                                                                                          
+    
+        });
+      }
+    
     }
 
     const pubSubServer = new PubSub(wss, {onConnect: onConnectCallback, onDisconnect: onDisconnectCallback,
