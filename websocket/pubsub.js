@@ -10,7 +10,8 @@ const Subscription = require('./subscription');
 
 class PubSub {
 
-  constructor (wss, onMessageCallbackArg) {
+  //constructor (wss, onConnectCallbackArg, onDisconnectCallbackArg, onMessageCallbackArg) {
+    constructor (wss, callbacksArg) {
     //   console.log("wss", wss);
     this.wss = wss
 
@@ -25,8 +26,13 @@ class PubSub {
     this.handlePublishMessage = this.handlePublishMessage.bind(this)
     this.removeClient = this.removeClient.bind(this)
     
+    /*
+    this.onConnectCallback = onConnectCallbackArg;
+    this.onDisconnectCallback = onDisconnectCallbackArg;
     this.onMessageCallback = onMessageCallbackArg;
-      
+      */
+     this.callbacks = callbacksArg;
+
     this.load()
   }
 
@@ -46,8 +52,19 @@ class PubSub {
         subscriptions: [],
       }
 
+      /*
+      if (this.onConnectCallback ) {
+        this.onConnectCallback(client);
+      }
+*/
+      if (this.callbacks && this.callbacks.onConnect) {
+        this.callbacks.onConnect(client);
+      }
+
       // add new client to the map
       this.addClient(client)
+
+     
 
       // listen when receive message from client
       ws.on('message',
@@ -58,6 +75,15 @@ class PubSub {
         // Find user subscriptions and remove
         const userSubscriptions = this.subscription.getSubscriptions(
           (sub) => sub.clientId === id)
+
+          /*
+        if (this.onDisconnectCallback ) {
+          this.onDisconnectCallback(userSubscriptions, id);
+        }*/
+        if (this.callbacks && this.callbacks.onDisconnect) {
+          this.callbacks.onDisconnect(id, userSubscriptions);
+        }
+    
         userSubscriptions.forEach((sub) => {
           this.subscription.remove(sub.id)
         })
@@ -159,9 +185,12 @@ class PubSub {
    * @param message
    */
   handleReceivedClientMessage (clientId, message) {
-
+/*
     if (this.onMessageCallback ) {
       this.onMessageCallback(clientId, message);
+    }*/
+    if (this.callbacks && this.callbacks.onMessage) {
+      this.callbacks.onMessage(clientId, message);
     }
 
     const client = this.getClient(clientId)
@@ -187,6 +216,11 @@ class PubSub {
           //@todo handle add this subscriber
           const topic = _.get(message, 'payload.topic', null)
           if (topic) {
+
+            if (this.callbacks && this.callbacks.onSubscribe) {
+              this.callbacks.onSubscribe(topic, clientId);
+            }
+
             this.handleAddSubscription(topic, clientId)
 
           }
@@ -196,7 +230,14 @@ class PubSub {
         case 'unsubscribe':
 
           const unsubscribeTopic = _.get(message, 'payload.topic')
+
+         
+
           if (unsubscribeTopic) {
+
+            if (this.callbacks && this.callbacks.onUnsubscribe) {
+              this.callbacks.onUnsubscribe(unsubscribeTopic, clientId);
+            }
 
             this.handleUnsubscribe(unsubscribeTopic, clientId)
           }
@@ -208,7 +249,12 @@ class PubSub {
           const publishTopic = _.get(message, 'payload.topic', null)
           const publishMessage = _.get(message, 'payload.message')
           if (publishTopic) {
-            const from = clientId
+            const from = clientId;
+
+            if (this.callbacks && this.callbacks.onPublish) {
+              this.callbacks.onPublish(publishTopic, publishMessage, from);
+            }
+
             this.handlePublishMessage(publishTopic, publishMessage, from)
           }
 
@@ -219,6 +265,11 @@ class PubSub {
           const broadcastTopicName = _.get(message, 'payload.topic', null)
           const broadcastMessage = _.get(message, 'payload.message')
           if (broadcastTopicName) {
+
+            if (this.callbacks && this.callbacks.onBroadcast) {
+              this.callbacks.onBroadcast(broadcastTopicName, broadcastMessage, clientId);
+            }
+
             this.handlePublishMessage(broadcastTopicName, broadcastMessage,
               clientId, true)
           }

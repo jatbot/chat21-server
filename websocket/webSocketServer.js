@@ -27,13 +27,31 @@ class WebSocketServer {
        path: "/",    
     });
 
-    var onMessageCallback = function(id, message) {
-      
+    var onConnectCallback = function(client) {
+      winston.info('onConnectCallback ');
       // check here if you can subscript o publish message
     }
 
-    const pubSubServer = new PubSub(wss);
-    // const pubSubServer = new PubSub(wss,onMessageCallback);
+    var onDisconnectCallback = function(subscript, id) {
+      winston.info('onDisconnectCallback ',subscript, id);
+      // check here if you can subscript o publish message
+    }
+
+
+    var onMessageCallback = function(id, message) {
+      winston.info('onMessageCallback ',id, message);
+      // check here if you can subscript o publish message
+    }
+
+    var onSubscribeCallback = function(id, message) {
+      winston.info('onSubscribeCallback ',id, message);
+      // check here if you can subscript o publish message
+    }
+
+    const pubSubServer = new PubSub(wss, {onConnect: onConnectCallback, onDisconnect: onDisconnectCallback,
+                              onMessage: onMessageCallback, onSubscribe: onSubscribeCallback});
+    //const pubSubServer = new PubSub(wss);
+     //const pubSubServer = new PubSub(wss,onConnectCallback, onDisconnectCallback, onMessageCallback);
 
 
     var that = this;
@@ -42,7 +60,8 @@ class WebSocketServer {
       winston.info('messageEvent websocket server ', message);
         //that.sendAll(message,'message');        
 //	/apps/{app_id}/users/{sender_id}/messages/{recipient_id}/{message_id}
-        pubSubServer.handlePublishMessage ('/apps/'+message.app_id+'/users/'+message.sender_id+'/messages/'+message.recipient_id, message, undefined, true);
+        var snapshot = {event: 'message.create', data: message};
+        pubSubServer.handlePublishMessage ('/apps/'+message.app_id+'/users/'+message.sender_id+'/messages/'+message.recipient_id, snapshot, undefined, true);
       });
    
   }

@@ -52,27 +52,29 @@ messageEvent.on('message.create', function(message) {
 
 messageEvent.on('message.sent', function(message) {
 
-  var timelineNewMessageClone = Object.assign({}, message.toObject());
-  delete timelineNewMessageClone._id;
+  if (message.channel_type=="direct") {  //is a direct message            
+      var timelineNewMessageClone = Object.assign({}, message.toObject());
+      delete timelineNewMessageClone._id;
 
-  var timelineNewMessage = new Message(timelineNewMessageClone);
+      var timelineNewMessage = new Message(timelineNewMessageClone);
 
-  //var path = "/apps/" + message.app_id + "/users/" + message.recipient_id + "/messages/" + message.sender_id + "/" + message.message_id;  
-  var path = "/apps/" + message.app_id + "/users/" + message.recipient_id + "/messages/" + message.sender_id; 
-  winston.info("path send timeline: " + path);
+      //var path = "/apps/" + message.app_id + "/users/" + message.recipient_id + "/messages/" + message.sender_id + "/" + message.message_id;  
+      var path = "/apps/" + message.app_id + "/users/" + message.recipient_id + "/messages/" + message.sender_id; 
+      winston.info("path send timeline: " + path);
 
-  timelineNewMessage.path = path;
-  timelineNewMessage.status =  MessageConstants.CHAT_MESSAGE_STATUS.DELIVERED;
+      timelineNewMessage.path = path;
+      timelineNewMessage.status =  MessageConstants.CHAT_MESSAGE_STATUS.DELIVERED;
 
-  timelineNewMessage.save(function(err, savedMessage) {
-    if (err) {
-      console.log(err);
-      return res.status(500).send({success: false, msg: 'Error saving timeline object.', err:err});
-    }
+      timelineNewMessage.save(function(err, savedMessage) {
+        if (err) {
+          console.log(err);
+          return res.status(500).send({success: false, msg: 'Error saving timeline object.', err:err});
+        }
 
-    console.log("new timeline message", savedMessage.toObject());
-    messageEvent.emit("message.create",savedMessage);
-   });
+        console.log("new timeline message", savedMessage.toObject());
+        messageEvent.emit("message.create",savedMessage);
+      });
+  }
 });
 
 
@@ -107,7 +109,9 @@ messageEvent.on('message.create', function(message) {
     };                              
 
    var query = {path: message.path},
-    options = { upsert: true, new: true, setDefaultsOnInsert: true };
+    options = { upsert: true, new: true, setDefaultsOnInsert: true 
+      // , rawResult:true
+    };
 
 // Find the document
 Conversation.findOneAndUpdate(query, newConversation, options, function(err, savedConversation) {
@@ -116,7 +120,9 @@ Conversation.findOneAndUpdate(query, newConversation, options, function(err, sav
   if (err) {
         console.log(err);
       }
-        console.log("saved conversation", savedConversation.toObject());
+        //console.log("saved conversation updatedExisting", savedConversation);      
+        //console.log("saved conversation", savedConversation.value.toObject());
+        console.log("saved conversation", savedConversation.isNew, savedConversation.toObject());
 
    });
 
