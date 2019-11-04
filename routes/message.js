@@ -12,6 +12,7 @@ var Conversation = require("../models/conversation");
 const uuidv4 = require('uuid/v4');
 
 //curl -X POST -H 'Content-Type: application/json' -d '{"sender_id":"123", "sender_fullname":"SFN", "recipient_id":"RFN", "text": "123", "app_id":"123"}' http://localhost:3200/messages
+//curl -X POST -H 'Content-Type: application/json' -d '{"sender_id":"123", "sender_fullname":"SFN", "recipient_id":"RFN", "text": "123", "app_id":"123"}' https://chat21-server.herokuapp.com:3200/messages
 
 router.post('/', function(req, res) {
  var messageId = uuidv4();
