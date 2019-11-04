@@ -12,7 +12,7 @@ const conversationEvent = new ConversationEvent();
 
 conversationEvent.on('conversation.create', function(message) {
 
- winston.info("conversationEvent.emit");
+ winston.info("conversationEvent create emit");
 /*
    if (message.status === MessageConstants.CHAT_MESSAGE_STATUS.SENDING) { 
        winston.info("messageEvent.emit message.sending", message); 
@@ -45,6 +45,10 @@ conversationEvent.on('conversation.create', function(message) {
 
 
 
+conversationEvent.on('conversation.update', function(message) {
+
+ winston.info("conversationEvent update emit");
+});
 
 
 module.exports = conversationEvent;
