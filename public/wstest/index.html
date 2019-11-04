@@ -17,7 +17,9 @@
                         //$('#'+data._id).html(`<div>${data.text}  </div>`);
                     }
                     );
-		    tilebase.start('{ "action": "subscribe", "payload": { "topic": "/apps/123/users/sendid/messages/RFN"}}');
+
+                    tilebase.start('{ "action": "subscribe", "payload": { "topic": "/apps/123/users/sendid/conversations/RFN"}}');
+		    //tilebase.start('{ "action": "subscribe", "payload": { "topic": "/apps/123/users/sendid/messages/RFN"}}');
 		    // tilebase.send('{ "action": "subscribe", "payload": { "topic": "/apps/123/users/sendid/conversations/RFN"}}');
 
                     //tilebase.start('{ "action": "subscribe", "payload": { "topic": "topic1"}}');

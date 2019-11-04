@@ -2,6 +2,7 @@ var Message = require("../models/message");
 const WebSocket = require('ws');
 var message2Event = require("../events/message2Event");
 var messageEvent = require("../events/messageEvent");
+var conversationEvent = require("../events/conversationEvent");
 var config = require('../config/database'); // get db config file
 var winston = require('../config/winston');
 const PubSub = require('./pubsub');
@@ -50,19 +51,34 @@ class WebSocketServer {
 
     const pubSubServer = new PubSub(wss, {onConnect: onConnectCallback, onDisconnect: onDisconnectCallback,
                               onMessage: onMessageCallback, onSubscribe: onSubscribeCallback});
+
     //const pubSubServer = new PubSub(wss);
      //const pubSubServer = new PubSub(wss,onConnectCallback, onDisconnectCallback, onMessageCallback);
 
 
     var that = this;
 
-    messageEvent.on('message.create', function (message) {
+     messageEvent.on('message.create', function (message) {
       winston.info('messageEvent websocket server ', message);
-        //that.sendAll(message,'message');        
-//	/apps/{app_id}/users/{sender_id}/messages/{recipient_id}/{message_id}
-        var snapshot = {event: 'message.create', data: message};
-        pubSubServer.handlePublishMessage ('/apps/'+message.app_id+'/users/'+message.sender_id+'/messages/'+message.recipient_id, snapshot, undefined, true);
-      });
+        var topic =  '/apps/'+message.app_id+'/users/'+message.sender_id+'/messages/'+message.recipient_id;                                                                                                            
+        winston.info('conversationEvent update websocket server topic: '+ topic);  
+        pubSubServer.handlePublishMessage (topic, message, undefined, true);
+    });
+    conversationEvent.on('conversation.create', function (conversation) {    
+        winston.info('conversationEvent create websocket server ', conversation);   
+
+        var topic =  '/apps/'+conversation.app_id+'/users/'+conversation.sender+'/conversations/'+conversation.recipient;      
+        winston.info('conversationEvent update websocket server topic: '+ topic);     
+        pubSubServer.handlePublishMessage (topic, conversation, undefined, true);                                                                                     
+    });
+
+   conversationEvent.on('conversation.update', function (conversation) {
+        winston.info('conversationEvent update websocket server ', conversation);
+        var topic =  '/apps/'+conversation.app_id+'/users/'+conversation.sender+'/conversations/'+conversation.recipient;
+        winston.info('conversationEvent update websocket server topic: '+ topic);
+        pubSubServer.handlePublishMessage (topic, conversation, undefined, true);                                                                                          
+   });      
+
    
   }
 
