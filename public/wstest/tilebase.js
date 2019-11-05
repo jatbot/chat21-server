@@ -104,12 +104,12 @@ class Tilebase {
                                 var object = {event: json.event, data: json};
 
                                 if (insUp==-1 && that.onCreate) {
-                                    that.onCreate(json, object);
+                                    that.onCreate(json.payload.message, object);
                                 }
                                 if (insUp>-1 && that.onUpdate) {
-                                    that.onUpdate(json, object);
+                                    that.onUpdate(json.payload.message, object);
                                 }
-                                 resolve(json, object);
+                                 resolve(json.payload.message, object);
                                 // resolve
                                 // $('#messages').after(json.text + '<br>');
                             }

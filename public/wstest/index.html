@@ -8,14 +8,18 @@
             <script>
                 
                 
-                // var 
-                var url = 'ws://localhost:3200/?token=JWT 123';
+                // var                 
+
+                var url = 'ws://'+window.location.host+'/?token=JWT 123';
                 tilebaseConv = new Tilebase(  url           
                     , function(data, notification) {
-                        $('#conversations').append(`<div>${data.last_message_text}</div>`);
+                        //$('#conversations').append(`<div>${data.last_message_text}</div>`);
+                        $('#conversations').append(`<div id="c-${data._id}">${data.last_message_text} ${notification.event}</div>`);
                     }
                     , function(object, notification) {
                         //$('#'+data._id).html(`<div>${data.text}  </div>`);
+                        $('#c-'+data._id).html(`<div id="c-${data._id}">${data.last_message_text}  ${notification.event}</div>`);
+
                     }
                     );
                     tilebaseConv.start('{ "action": "subscribe", "payload": { "topic": "/apps/123/users/sendid/conversations/RFN"}}');
@@ -23,10 +27,13 @@
 
                 tilebaseConv = new Tilebase(url
                     , function(data, notification) {
-                        $('#messages').append(`<div>${data.text}</div>`);
+                       // $('#messages').append(`<div>${data.text}</div>`);
+                       $('#messages').append(`<div id="m-${data._id}">${data.text} ${notification.event}</div>`);
                     }
                     , function(object, notification) {
                         //$('#'+data._id).html(`<div>${data.text}  </div>`);
+                        $('#m-'+data._id).html(`<div id="m-${data._id}">${data.text}  ${notification.event}</div>`);
+
                     }
                     );
                     tilebaseConv.start('{ "action": "subscribe", "payload": { "topic": "/apps/123/users/sendid/messages/RFN"}}');
