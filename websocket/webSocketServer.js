@@ -135,21 +135,21 @@ class WebSocketServer {
     var that = this;
 
      messageEvent.on('message.create', function (message) {
-      winston.info('messageEvent websocket server ', message);
+      winston.debug('messageEvent websocket create message server ', message);
         var topic =  '/apps/'+message.app_id+'/users/'+message.sender_id+'/messages/'+message.recipient_id;                                                                                                            
-        winston.info('conversationEvent update websocket server topic: '+ topic);  
+        winston.info('messageEvent create message websocket server topic: '+ topic);  
         pubSubServer.handlePublishMessage (topic, message, undefined, true);
     });
     conversationEvent.on('conversation.create', function (conversation) {    
-        winston.info('conversationEvent create websocket server ', conversation);   
+        winston.debug('conversationEvent create websocket server ', conversation);   
 
         var topic =  '/apps/'+conversation.app_id+'/users/'+conversation.sender+'/conversations/'+conversation.recipient;      
-        winston.info('conversationEvent update websocket server topic: '+ topic);     
+        winston.info('conversationEvent create websocket server topic: '+ topic);     
         pubSubServer.handlePublishMessage (topic, conversation, undefined, true);                                                                                     
     });
 
    conversationEvent.on('conversation.update', function (conversation) {
-        winston.info('conversationEvent update websocket server ', conversation);
+        winston.debug('conversationEvent update websocket server ', conversation);
         var topic =  '/apps/'+conversation.app_id+'/users/'+conversation.sender+'/conversations/'+conversation.recipient;
         winston.info('conversationEvent update websocket server topic: '+ topic);
         pubSubServer.handlePublishMessage (topic, conversation, undefined, true);                                                                                          

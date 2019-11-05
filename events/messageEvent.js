@@ -13,7 +13,7 @@ const messageEvent = new MessageEvent();
 
 messageEvent.on('message.create', function(message) {
 
- winston.info("messageEvent.emit");
+ winston.debug("messageEvent.emit");
 
    if (message.status === MessageConstants.CHAT_MESSAGE_STATUS.SENDING) { 
        winston.info("messageEvent.emit message.sending", message); 
@@ -60,7 +60,7 @@ messageEvent.on('message.sent', function(message) {
 
       //var path = "/apps/" + message.app_id + "/users/" + message.recipient_id + "/messages/" + message.sender_id + "/" + message.message_id;  
       var path = "/apps/" + message.app_id + "/users/" + message.recipient_id + "/messages/" + message.sender_id; 
-      winston.info("path send timeline: " + path);
+      winston.info("send direct message to recipient timeline: " + path);
 
       timelineNewMessage.path = path;
       timelineNewMessage.status =  MessageConstants.CHAT_MESSAGE_STATUS.DELIVERED;
@@ -71,7 +71,7 @@ messageEvent.on('message.sent', function(message) {
           return res.status(500).send({success: false, msg: 'Error saving timeline object.', err:err});
         }
 
-        console.log("new timeline message", savedMessage.toObject());
+        console.log("new timeline message created", savedMessage.toObject());
         messageEvent.emit("message.create",savedMessage);
       });
   }
@@ -94,7 +94,7 @@ messageEvent.on('message.create', function(message) {
  }
 
   //
-  winston.info("path: " + path);
+  winston.info("create conversation with path: " + path);
 
    //var newConversation = new Conversation({                                                                                                                                                 
     var newConversation ={                                                                                                                                                 
