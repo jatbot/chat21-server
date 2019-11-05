@@ -25,7 +25,7 @@
                     tilebaseConv.start('{ "action": "subscribe", "payload": { "topic": "/apps/123/users/sendid/conversations/RFN"}}');
 
 
-                tilebaseConv = new Tilebase(url
+                tilebaseMess = new Tilebase(url
                     , function(data, notification) {
                        // $('#messages').append(`<div>${data.text}</div>`);
                        $('#messages').append(`<div id="m-${data._id}">${data.text} ${notification.event}</div>`);
@@ -36,7 +36,7 @@
 
                     }
                     );
-                    tilebaseConv.start('{ "action": "subscribe", "payload": { "topic": "/apps/123/users/sendid/messages/RFN"}}');
+                    tilebaseMess.start('{ "action": "subscribe", "payload": { "topic": "/apps/123/users/sendid/messages/RFN"}}');
 
 
 		    //tilebase.start('{ "action": "subscribe", "payload": { "topic": "/apps/123/users/sendid/messages/RFN"}}');

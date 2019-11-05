@@ -7,6 +7,8 @@ var conversationEvent = require("../events/conversationEvent");
 var config = require('../config/database'); // get db config file
 var winston = require('../config/winston');
 const PubSub = require('./pubsub');
+const uuidv4 = require('uuid/v4');
+var MessageConstants = require("../models/messageConstants");
 
 class WebSocketServer {
 
@@ -39,6 +41,51 @@ class WebSocketServer {
       // check here if you can subscript o publish message
     }
 
+
+//tilebaseMess.send('{ "action": "publish", "payload": { "topic": "/apps/123/users/sendid/conversations/RFN", "message":{"sender_id":"sendid","sender_fullname":"SFN", "recipient_id":"RFN", "recipient_fullname":"RFN","text":"hi","app_id":"123"}}}');
+    var onPublishCallback = function(publishTopic, publishMessage, from) {
+      winston.info("onPublish topic: "+publishTopic +" from: "+from, publishMessage);
+
+	var messageId = uuidv4();
+
+ var path = "/apps/"+ publishMessage.app_id + "/users/" +  publishMessage.sender_id + "/messages/" +  publishMessage.recipient_id;
+ winston.info("path: " + path);
+
+ var newMessage = new Message({
+    message_id: messageId,
+    sender_id:  publishMessage.sender_id,
+    sender_fullname:  publishMessage.sender_fullname,
+    recipient_id:  publishMessage.recipient_id,
+    recipient_fullname:  publishMessage.recipient_fullname,
+    text:  publishMessage.text,
+    app_id:  publishMessage.app_id,
+    createdBy:  publishMessage.sender_id,
+    path: path,
+    status: MessageConstants.CHAT_MESSAGE_STATUS.SENT
+  });
+
+  newMessage.save(function(err, savedMessage) {
+    if (err) {
+      console.error("error saving message",err);
+	 pubSubServer.send(from, { 
+             action: 'publish-err',   
+                payload: {    
+                   topic: "err",     
+                   message: err,   
+                },        
+             })            
+
+      return //pubSubServer.handlePublishMessage (from, err, undefined, true);
+    }
+
+    console.log("new message", savedMessage.toObject());
+    messageEvent.emit("message.create",savedMessage);
+  });
+
+
+
+
+    }
 
     var onMessageCallback = function(id, message) {
       winston.info('onMessageCallback ',id, message);
@@ -79,12 +126,12 @@ class WebSocketServer {
     }
 
     const pubSubServer = new PubSub(wss, {onConnect: onConnectCallback, onDisconnect: onDisconnectCallback,
-                              onMessage: onMessageCallback, onSubscribe: onSubscribeCallback});
+                              onMessage: onMessageCallback, onSubscribe: onSubscribeCallback, onPublish:onPublishCallback});
 
     //const pubSubServer = new PubSub(wss);
      //const pubSubServer = new PubSub(wss,onConnectCallback, onDisconnectCallback, onMessageCallback);
 
-
+ 
     var that = this;
 
      messageEvent.on('message.create', function (message) {
