@@ -40,7 +40,7 @@ class PubSub {
 
     const wss = this.wss
 
-    wss.on('connection', (ws) => {
+    wss.on('connection', (ws,req) => {
 
       const id = this.autoId()
 
@@ -58,7 +58,7 @@ class PubSub {
       }
 */
       if (this.callbacks && this.callbacks.onConnect) {
-        this.callbacks.onConnect(client);
+        this.callbacks.onConnect(client, req);
       }
 
       // add new client to the map
@@ -152,7 +152,7 @@ class PubSub {
    * @param from
    * @isBroadcast = false that mean send all, if true, send all not me
    */
-  handlePublishMessage (topic, message, from, isBroadcast = false) {
+  handlePublishMessage (topic, message, from, isBroadcast = false, method) {
 
     let subscriptions = isBroadcast
       ? this.subscription.getSubscriptions(
@@ -171,6 +171,7 @@ class PubSub {
           action: 'publish',
           payload: {
             topic: topic,
+            method: method,
             message: message,
           },
         })
