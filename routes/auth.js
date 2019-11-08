@@ -8,7 +8,7 @@ var User = require("../models/user");
 var winston = require('../config/winston');
 const uuidv4 = require('uuid/v4');
 
-var authEvent = require("../event/authEvent");
+var authEvent = require("../events/authEvent");
 
 var passport = require('passport');
 require('../middleware/passport')(passport);
