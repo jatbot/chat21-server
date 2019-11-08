@@ -16,7 +16,7 @@
                         //$('#conversations').append(`<div>${data.last_message_text}</div>`);
                         $('#conversations').append(`<div id="c-${data._id}">${data.last_message_text} ${notification.event}</div>`);
                     }
-                    , function(object, notification) {
+                    , function(data, notification) {
                         //$('#'+data._id).html(`<div>${data.text}  </div>`);
                         $('#c-'+data._id).html(`<div id="c-${data._id}">${data.last_message_text}  ${notification.event}</div>`);
 
@@ -30,7 +30,7 @@
                        // $('#messages').append(`<div>${data.text}</div>`);
                        $('#messages').append(`<div id="m-${data._id}">${data.text} ${notification.event}</div>`);
                     }
-                    , function(object, notification) {
+                    , function(data, notification) {
                         //$('#'+data._id).html(`<div>${data.text}  </div>`);
                         $('#m-'+data._id).html(`<div id="m-${data._id}">${data.text}  ${notification.event}</div>`);
 
@@ -52,7 +52,7 @@
     </head>
     <bdoy>
             <h1>
-                    Web Socket Example
+                    Web Socket Example2
                 </h1>
                 <p>
                     open console to see connection.

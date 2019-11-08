@@ -42,7 +42,7 @@ class WebSocketServer {
     }
 
 
-//tilebaseMess.send('{ "action": "publish", "payload": { "topic": "/apps/123/users/sendid/conversations/RFN", "message":{"sender_id":"sendid","sender_fullname":"SFN", "recipient_id":"RFN", "recipient_fullname":"RFN","text":"hi","app_id":"123"}}}');
+//tilebaseMess.send('{ "action": "publish", "payload": { "topic": "/apps/123/users/sendid/conversations/RFN", "method":"CREATE","message":{"sender_id":"sendid","sender_fullname":"SFN", "recipient_id":"RFN", "recipient_fullname":"RFN","text":"hi","app_id":"123"}}}');
     var onPublishCallback = function(publishTopic, publishMessage, from) {
       winston.info("onPublish topic: "+publishTopic +" from: "+from, publishMessage);
 
@@ -104,7 +104,7 @@ class WebSocketServer {
             winston.error('onSubscribeCallback find',err);  
           }
           winston.info('onSubscribeCallback find', conversations);  
-          pubSubServer.handlePublishMessage (id, conversations, undefined, true);                                                                                          
+          pubSubServer.handlePublishMessage (id, conversations, undefined, true, "CREATE");                                                                                          
     
         });
       }
@@ -118,7 +118,7 @@ class WebSocketServer {
             winston.error('onSubscribeCallback find',err);  
           }
           winston.info('onSubscribeCallback find', messages);  
-          pubSubServer.handlePublishMessage (id, messages, undefined, true);                                                                                          
+          pubSubServer.handlePublishMessage (id, messages, undefined, true, "CREATE");                                                                                          
     
         });
       }
@@ -136,23 +136,43 @@ class WebSocketServer {
 
      messageEvent.on('message.create', function (message) {
       winston.debug('messageEvent websocket create message server ', message);
-        var topic =  '/apps/'+message.app_id+'/users/'+message.sender_id+'/messages/'+message.recipient_id;                                                                                                            
-        winston.info('messageEvent create message websocket server topic: '+ topic);  
-        pubSubServer.handlePublishMessage (topic, message, undefined, true);
+
+      var path;
+      if (message.status == MessageConstants.CHAT_MESSAGE_STATUS.SENDING || message.status == MessageConstants.CHAT_MESSAGE_STATUS.SENT){                                                  
+	  path = "/apps/"+message.app_id + "/users/" + message.sender_id + "/messages/" + message.recipient_id;
+       } 
+      if (message.status == MessageConstants.CHAT_MESSAGE_STATUS.DELIVERED){      
+          path = "/apps/"+message.app_id + "/users/" + message.recipient_id + "/messages/" + message.sender_id;
+      }
+
+       // var topic =  '/apps/'+message.app_id+'/users/'+message.sender_id+'/messages/'+message.recipient_id;                                                                                                            
+        winston.info('messageEvent create message websocket server topic: '+ path);  
+        pubSubServer.handlePublishMessage (path, message, undefined, true, "CREATE");
     });
     conversationEvent.on('conversation.create', function (conversation) {    
         winston.debug('conversationEvent create websocket server ', conversation);   
 
         var topic =  '/apps/'+conversation.app_id+'/users/'+conversation.sender+'/conversations/'+conversation.recipient;      
         winston.info('conversationEvent create websocket server topic: '+ topic);     
-        pubSubServer.handlePublishMessage (topic, conversation, undefined, true);                                                                                     
+        pubSubServer.handlePublishMessage (topic, conversation, undefined, true, "CREATE");                                                                                     
     });
 
    conversationEvent.on('conversation.update', function (conversation) {
         winston.debug('conversationEvent update websocket server ', conversation);
-        var topic =  '/apps/'+conversation.app_id+'/users/'+conversation.sender+'/conversations/'+conversation.recipient;
-        winston.info('conversationEvent update websocket server topic: '+ topic);
-        pubSubServer.handlePublishMessage (topic, conversation, undefined, true);                                                                                          
+
+
+	 var path;
+   if (conversation.status == MessageConstants.CHAT_MESSAGE_STATUS.SENDING || conversation.status == MessageConstants.CHAT_MESSAGE_STATUS.SENT){
+      path = "/apps/"+conversation.app_id + "/users/" + conversation.sender + "/conversations/" + conversation.recipient;                                                                                                                                                             
+  }                                                                                                                                                                                                                                                                        
+   if (conversation.status == MessageConstants.CHAT_MESSAGE_STATUS.DELIVERED){
+    path = "/apps/"+conversation.app_id + "/users/" + conversation.recipient + "/conversations/" + conversation.sender;                                                                                                                                                            
+   }               
+
+
+//        var topic =  '/apps/'+conversation.app_id+'/users/'+conversation.sender+'/conversations/'+conversation.recipient;
+        winston.info('conversationEvent update websocket server topic: '+ path);
+        pubSubServer.handlePublishMessage (path, conversation, undefined, true, "UPDATE");                                                                                          
    });      
 
    
