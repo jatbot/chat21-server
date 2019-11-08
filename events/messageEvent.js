@@ -75,7 +75,7 @@ messageEvent.on('message.sent', function(message) {
         console.log("new timeline message created", savedMessage.toObject());
         messageEvent.emit("message.create",savedMessage);
       });
-  } else if () {
+  } else if (message.channel_type=="group") {
       var timelineNewMessageClone = Object.assign({}, message.toObject());
       delete timelineNewMessageClone._id;
 
