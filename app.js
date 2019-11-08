@@ -38,7 +38,7 @@ if (process.env.NODE_ENV == 'test')  {
 
 var message = require('./routes/message');
 var conversation = require('./routes/conversation');
-
+var auth = require('./routes/auth');
 
 
 
@@ -99,7 +99,7 @@ app.get('/', function (req, res) {
 
   
 
-
+app.use('/auth',auth);
 app.use('/messages', message);
 app.use('/conversations', conversation);
 

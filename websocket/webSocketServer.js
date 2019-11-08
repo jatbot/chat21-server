@@ -61,6 +61,7 @@ class WebSocketServer {
     app_id:  publishMessage.app_id,
     createdBy:  publishMessage.sender_id,
     path: path,
+    channel_type: publishMessage.channel_type,
     status: MessageConstants.CHAT_MESSAGE_STATUS.SENT
   });
 

@@ -76,6 +76,7 @@ messageEvent.on('message.sent', function(message) {
         messageEvent.emit("message.create",savedMessage);
       });
   } else if (message.channel_type=="group") {
+	winston.info("group msg");
       var timelineNewMessageClone = Object.assign({}, message.toObject());
       delete timelineNewMessageClone._id;
 
@@ -87,7 +88,7 @@ messageEvent.on('message.sent', function(message) {
         return;
        }
        if (!group){
-        winston.debug("group not found: "+message.recipient_id); 
+        winston.info("group not found: "+message.recipient_id); 
         return;
        }
        group.members.forEach(function(groupMember) {
