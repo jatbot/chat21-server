@@ -48,8 +48,7 @@ router.post('/signup', function (req, res) {
 
              res.json({ success: true, msg: 'Successfully created new user.', user: userJson });
                   
-                });
-      
+                  
 
         
       }).catch(function (err) {
