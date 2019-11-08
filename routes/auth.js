@@ -13,6 +13,7 @@ var authEvent = require("../events/authEvent");
 var passport = require('passport');
 require('../middleware/passport')(passport);
 var validtoken = require('../middleware/valid-token');
+var noentitycheck = require('../middleware/noentitycheck');
 
 
 router.post('/signup', function (req, res) {
