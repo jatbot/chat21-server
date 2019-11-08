@@ -3,6 +3,7 @@ var winston = require('../config/winston');
 var Message = require("../models/message");
 var MessageConstants = require("../models/messageConstants");
 var Conversation = require('../models/conversation');
+var Group = require('../models/group');
 var conversationEvent = require('../events/conversationEvent');
 
 
@@ -74,6 +75,44 @@ messageEvent.on('message.sent', function(message) {
         console.log("new timeline message created", savedMessage.toObject());
         messageEvent.emit("message.create",savedMessage);
       });
+  } else if () {
+      var timelineNewMessageClone = Object.assign({}, message.toObject());
+      delete timelineNewMessageClone._id;
+
+      var timelineNewMessage = new Message(timelineNewMessageClone);  
+ 
+      Group.findOne({group_id: message.recipient_id}, function(err, group) {
+       if (err) {
+         winston.error("error getting group: " + message.recipient_id);    
+        return;
+       }
+       if (!group){
+        winston.debug("group not found: "+message.recipient_id); 
+        return;
+       }
+       group.members.forEach(function(groupMember) {
+         if (groupMember!=message.sender_id) { 
+          
+           var path = "/apps/" + message.app_id + "/users/" + message.recipient_id + "/messages/" + message.sender_id; 
+           winston.info("send group message to recipient timeline: " + path);
+
+           timelineNewMessage.path = path;
+           timelineNewMessage.status =  MessageConstants.CHAT_MESSAGE_STATUS.DELIVERED;
+
+           timelineNewMessage.save(function(err, savedMessage) {
+             if (err) {
+               return winston.error(err);               
+             }
+
+             console.log("new group timeline message created", savedMessage.toObject());
+             messageEvent.emit("message.create",savedMessage);
+           });        
+        }
+       });
+      });
+             
+  } else {
+      winston.error("wring type");       
   }
 });
 
