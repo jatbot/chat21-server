@@ -47,6 +47,39 @@
                     // { "action": "publish", "payload": { "topic": "topic1", "message": "hi"}}
                     // tilebase.send('{ "action": "publish", "payload": { "topic": "topic1", "message": "hi"}}');
 
+
+
+tilebaseRConv = new Tilebase(  url  
+    , function(data, notification) {   
+ $('#rconversations').append('<div id="cr-'+data._id+'">'+data.last_message_text+'</div>');       
+ }
+, function(data, notification) {       
+$('#cr-'+data._id).html('<div id="cr-'+data._id+'">'+data.last_message_text+'</div>');      
+   });
+
+tilebaseRConv.start('{ "action": "subscribe", "payload": { "topic": "/apps/123/users/RFN/conversations/sendid"}}');    
+
+tilebaseRMess = new Tilebase(url 
+ , function(data, notification) {      
+     $('#rmessages').append('<div id="mr-${data._id}">'+data.text+'</div>');
+                }     
+ , function(data, notification) {     
+$('#mr-'+data._id).html('<div id="mr-${data._id}">'+data.text+'</div>');   
+    }    
+                                                                                                                                                                                                );                                                                                                                                                                                                                                                                 
+         tilebaseRMess.start('{ "action": "subscribe", "payload": { "topic": "/apps/123/users/RFN/messages/sendid"}}');  
+
+
+
+
+
+
+
+
+
+
+
+
                   
             </script>
     </head>
@@ -62,6 +95,10 @@
                 <div id="conversations"></div>
                 Messages
                 <div id="messages"></div>
+		Other conversations
+		 <div id="rconversations"></div> 
+                Other Messages  
+                <div id="rmessages"></div>   
                 
     </bdoy>
 </html>
