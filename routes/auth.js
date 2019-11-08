@@ -3,12 +3,8 @@ var express = require('express');
 var jwt = require('jsonwebtoken');
 var router = express.Router();
 var User = require("../models/user");
-var Project_user = require("../models/project_user");
-var RoleConstants = require("../models/roleConstants");
 var uniqid = require('uniqid');
-var userService = require("../services/userService");
 
-var noentitycheck = require('../middleware/noentitycheck');
 
 var winston = require('../config/winston');
 const uuidv4 = require('uuid/v4');
@@ -24,41 +20,38 @@ router.post('/signup', function (req, res) {
   if (!req.body.email || !req.body.password) {
     return res.json({ success: false, msg: 'Please pass email and password.' });
   } else {    
-    return userService.signup(req.body.email, req.body.password, req.body.firstname, req.body.lastname, false)
-      .then(function (savedUser) {
+    
+            var newUser = new User({
+                    _id: new mongoose.Types.ObjectId(),
+                // providerId: providerId,
+                    email: req.body.email,
+                    password: req.body.password,
+                    firstname: req.body.firstname,
+                    lastname: req.body.lastname,
+                    emailverified: false,
+                    // auth: authSaved._id
+                });
+                // save the user
+                newUser.save(function (err, savedUser) {
+                    if (err) {
+                        return reject(err);
+                    }
+
+                    winston.info('User created', savedUser.toObject());
+                  authEvent.emit("user.signup", {savedUser: savedUser, req: req});                         
 
 
-        winston.debug('-- >> -- >> savedUser ', savedUser.toObject());
+              //remove password 
+              let userJson = savedUser.toObject();
+              delete userJson.password;
 
-        if (!req.body.disableEmail){
-          emailService.sendVerifyEmailAddress(savedUser.email, savedUser);
-        }
+
+             res.json({ success: true, msg: 'Successfully created new user.', user: userJson });
+                  
+                });
+      
+
         
-
-
-        /*
-         * *** CHECK THE EMAIL OF THE NEW USER IN THE PENDING INVITATIONS TABLE ***
-         * IF EXIST MEANS THAT THE NEW USER HAS BEEN INVITED TO A PROJECT WHEN IT HAS NOT YET REGISTERED
-         * SO IF ITS EMAIL EXIST IN THE PENDING INVITATIONS TABLE ARE CREATED THE PROJECT USER FOR THE PROJECTS 
-         * TO WHICH WAS INVITED, AT THE SAME TIME THE USER ARE DELETED FROM THE PENDING INVITATION TABLE 
-         */
-        pendinginvitation.checkNewUserInPendingInvitationAndSavePrcjUser(savedUser.email, savedUser._id);
-          // .then(function (projectUserSaved) {
-          //   return res.json({ msg: "Saved project user ", projectUser: projectUserSaved });
-          // }).catch(function (err) {
-          //   return res.send(err);
-          // });
-
-
-          authEvent.emit("user.signup", {savedUser: savedUser, req: req});                         
-
-
-          //remove password 
-          let userJson = savedUser.toObject();
-          delete userJson.password;
-          
-
-         res.json({ success: true, msg: 'Successfully created new user.', user: userJson });
       }).catch(function (err) {
 
 
@@ -77,47 +70,23 @@ router.post('/signup', function (req, res) {
 
 router.post('/signinAnonymously', function (req, res) {
  
-  var email = uuidv4() + '@tiledesk.com';
-  winston.info('signinAnonymously email: ' + email);
-
-  var password = uuidv4();
-  winston.info('signinAnonymously password: ' + password);
-
-  // signup ( email, password, firstname, lastname, emailverified)
-  return userService.signup(email, password, req.body.firstname, req.body.lastname, false)
-    .then(function (savedUser) {
-
-
-      winston.debug('-- >> -- >> savedUser ', savedUser.toObject());
-
-
-      var newProject_user = new Project_user({
-        // _id: new mongoose.Types.ObjectId(),
-        id_project: req.body.id_project, //attentoqui
-        id_user: savedUser._id,
-        role: RoleConstants.GUEST,
-        user_available: true,
-        createdBy: savedUser.id,
-        updatedBy: savedUser.id
-      });
-
-      return newProject_user.save(function (err, savedProject_user) {
+   var newUser = new User({
+        _id: new mongoose.Types.ObjectId(),
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        emailverified: false,
+        // auth: authSaved._id
+    });
+    // save the user
+    newUser.save(function (err, savedUser) {
         if (err) {
-          winston.error('Error saving object.', err)
-          return res.status(500).send({ success: false, msg: 'Error saving object.' });
+            return reject(err);
         }
 
+        winston.info('Anon User created', savedUser.toObject());
     
         authEvent.emit("user.signin", savedUser);       
-        authEvent.emit("projectuser.create", savedProject_user);         
 
-          winston.info('project user created ', savedProject_user.toObject());
-
-          
-        //remove password 
-        let userJson = savedUser.toObject();
-        delete userJson.password;
-        
 
         var signOptions = {
           issuer:  'https://tiledesk.com',
