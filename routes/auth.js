@@ -103,7 +103,7 @@ router.post('/signinAnonymously', function (req, res) {
        winston.error('Error registering new user', err);
        res.send(err);
     });
-  });
+
 });
 
 //caso UNI. pass jwt token with project secret sign. so aud=project/id subject=user
