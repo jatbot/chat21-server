@@ -3,8 +3,6 @@
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script src="./tilebase.js"></script>
 
-            <!-- <script type="text/javascript" src="./main.js"></script> -->
-
             <script>
                 
                 
@@ -13,11 +11,9 @@
                 var url = 'ws://'+window.location.host+'/?token=JWT 123';
                 tilebaseConv = new Tilebase(  url           
                     , function(data, notification) {
-                        //$('#conversations').append(`<div>${data.last_message_text}</div>`);
                         $('#conversations').append(`<div id="c-${data._id}">${data.last_message_text} ${notification.event}</div>`);
                     }
                     , function(data, notification) {
-                        //$('#'+data._id).html(`<div>${data.text}  </div>`);
                         $('#c-'+data._id).html(`<div id="c-${data._id}">${data.last_message_text}  ${notification.event}</div>`);
 
                     }
@@ -27,11 +23,9 @@
 
                 tilebaseMess = new Tilebase(url
                     , function(data, notification) {
-                       // $('#messages').append(`<div>${data.text}</div>`);
                        $('#messages').append(`<div id="m-${data._id}">${data.text} ${notification.event}</div>`);
                     }
                     , function(data, notification) {
-                        //$('#'+data._id).html(`<div>${data.text}  </div>`);
                         $('#m-'+data._id).html(`<div id="m-${data._id}">${data.text}  ${notification.event}</div>`);
 
                     }
@@ -51,20 +45,20 @@
 
 tilebaseRConv = new Tilebase(  url  
     , function(data, notification) {   
- $('#rconversations').append('<div id="cr-'+data._id+'">'+data.last_message_text+'</div>');       
+       $('#rconversations').append(`<div id="cr-${data._id}">${data.last_message_text} ${notification.event}</div>`);
  }
 , function(data, notification) {       
-$('#cr-'+data._id).html('<div id="cr-'+data._id+'">'+data.last_message_text+'</div>');      
+     $('#cr-'+data._id).html(`<div id="cr-${data._id}">${data.last_message_text}`);
    });
 
 tilebaseRConv.start('{ "action": "subscribe", "payload": { "topic": "/apps/123/users/RFN/conversations/sendid"}}');    
 
 tilebaseRMess = new Tilebase(url 
  , function(data, notification) {      
-     $('#rmessages').append('<div id="mr-${data._id}">'+data.text+'</div>');
+      $('#rmessages').append(`<div id="mr-${data._id}">${data.text} ${notification.event}</div>`);
                 }     
  , function(data, notification) {     
-$('#mr-'+data._id).html('<div id="mr-${data._id}">'+data.text+'</div>');   
+      $('#mr-'+data._id).html(`<div id="mr-${data._id}">${data.text}  ${notification.event}</div>`);
     }    
                                                                                                                                                                                                 );                                                                                                                                                                                                                                                                 
          tilebaseRMess.start('{ "action": "subscribe", "payload": { "topic": "/apps/123/users/RFN/messages/sendid"}}');  
