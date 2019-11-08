@@ -61,11 +61,11 @@ module.exports = function(passport) {
           }
       });
 
-    }
+    
    
 
 
-  }));
+  });
 
 
 
