@@ -19,8 +19,8 @@ module.exports = function(passport) {
   var opts = {
             jwtFromRequest: ExtractJwt.fromAuthHeaderWithScheme("jwt"),
             //this will help you to pass request body to passport
-            passReqToCallback: true //https://stackoverflow.com/questions/55163015/how-to-bind-or-pass-req-parameter-to-passport-js-jwt-strategy
-            // secretOrKey: config.secret,
+            passReqToCallback: true, //https://stackoverflow.com/questions/55163015/how-to-bind-or-pass-req-parameter-to-passport-js-jwt-strategy
+            secretOrKey: config.secret,
   }
 
 
