@@ -5253,3 +5253,38 @@ info: onConnectCallback
 error: undefined
 info: ::ffff:127.0.0.1 - - [08/Nov/2019:18:15:09 +0000] "POST /auth/signup HTTP/1.1" 500 1868 "-" "curl/7.58.0"
 
+error: undefined
+info: ::ffff:127.0.0.1 - - [08/Nov/2019:18:18:35 +0000] "POST /auth/signup HTTP/1.1" 500 1914 "-" "curl/7.58.0"
+
+error: undefined
+info: ::ffff:127.0.0.1 - - [08/Nov/2019:18:18:56 +0000] "POST /auth/signup HTTP/1.1" 500 2822 "-" "curl/7.58.0"
+
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+info: onConnectCallback 
+info: onConnectCallback 
+info: onConnectCallback 
+info: onConnectCallback 
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+error: Error registering new userdocument must have an _id before saving {"name":"MongooseError","stack":"MongooseError: document must have an _id before saving\n    at new MongooseError (/home/ubuntu/dev/chat21-server/node_modules/mongoose/lib/error/index.js:12:11)\n    at Timeout._onTimeout (/home/ubuntu/dev/chat21-server/node_modules/mongoose/lib/model.js:148:18)\n    at ontimeout (timers.js:436:11)\n    at tryOnTimeout (timers.js:300:5)\n    at listOnTimeout (timers.js:263:5)\n    at Timer.processTimers (timers.js:223:10)"}
+error: uncaughtException: reject is not defined
+ReferenceError: reject is not defined
+    at /home/ubuntu/dev/chat21-server/routes/auth.js:36:25
+    at /home/ubuntu/dev/chat21-server/node_modules/mongoose/lib/model.js:4074:16
+    at /home/ubuntu/dev/chat21-server/node_modules/mongoose/lib/services/model/applyHooks.js:175:17
+    at process._tickCallback (internal/process/next_tick.js:61:11) {"error":{},"stack":"ReferenceError: reject is not defined\n    at /home/ubuntu/dev/chat21-server/routes/auth.js:36:25\n    at /home/ubuntu/dev/chat21-server/node_modules/mongoose/lib/model.js:4074:16\n    at /home/ubuntu/dev/chat21-server/node_modules/mongoose/lib/services/model/applyHooks.js:175:17\n    at process._tickCallback (internal/process/next_tick.js:61:11)","exception":true,"date":"Fri Nov 08 2019 18:19:58 GMT+0000 (Coordinated Universal Time)","process":{"pid":6206,"uid":1000,"gid":1000,"cwd":"/home/ubuntu/dev/chat21-server","execPath":"/usr/bin/node","version":"v10.17.0","argv":["/usr/bin/node","/home/ubuntu/dev/chat21-server/bin/www"],"memoryUsage":{"rss":70569984,"heapTotal":40148992,"heapUsed":26074944,"external":18598267}},"os":{"loadavg":[0.080078125,0.0166015625,0.00537109375],"uptime":35644},"trace":[{"column":25,"file":"/home/ubuntu/dev/chat21-server/routes/auth.js","function":null,"line":36,"method":null,"native":false},{"column":16,"file":"/home/ubuntu/dev/chat21-server/node_modules/mongoose/lib/model.js","function":null,"line":4074,"method":null,"native":false},{"column":17,"file":"/home/ubuntu/dev/chat21-server/node_modules/mongoose/lib/services/model/applyHooks.js","function":null,"line":175,"method":null,"native":false},{"column":11,"file":"internal/process/next_tick.js","function":"process._tickCallback","line":61,"method":"_tickCallback","native":false}]}
+info: ::ffff:127.0.0.1 - - [08/Nov/2019:18:19:58 +0000] "POST /auth/signup HTTP/1.1" 200 76 "-" "curl/7.58.0"
+
+info: databaseUri: mongodb://test:xKKv0lWW6Yxhemw1@cluster0-shard-00-00-h8ftd.mongodb.net:27017,cluster0-shard-00-01-h8ftd.mongodb.net:27017,cluster0-shard-00-02-h8ftd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+info: autoIndex: true
+info: message2Event init
+error: Error registering new userE11000 duplicate key error collection: test.users index: email_1 dup key: { : "andrea.leo@f21.it" } {"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: test.users index: email_1 dup key: { : \"andrea.leo@f21.it\" }","op":{"updatedAt":"2019-11-08T18:20:33.881Z","createdAt":"2019-11-08T18:20:33.881Z","email":"andrea.leo@f21.it","password":"$2a$10$OrqIuxS2iDOZ0OmXc2fvyeo/qDYT57Q3ifOIS3d24PPrjGpAk9PaK","emailverified":false,"_id":"5dc5b1f158406b1854aaa54c","__v":0}}
+error: uncaughtException: reject is not defined
+ReferenceError: reject is not defined
+    at /home/ubuntu/dev/chat21-server/routes/auth.js:36:25
+    at /home/ubuntu/dev/chat21-server/node_modules/mongoose/lib/model.js:4074:16
+    at /home/ubuntu/dev/chat21-server/node_modules/mongoose/lib/services/model/applyHooks.js:175:17
+    at process._tickCallback (internal/process/next_tick.js:61:11) {"error":{},"stack":"ReferenceError: reject is not defined\n    at /home/ubuntu/dev/chat21-server/routes/auth.js:36:25\n    at /home/ubuntu/dev/chat21-server/node_modules/mongoose/lib/model.js:4074:16\n    at /home/ubuntu/dev/chat21-server/node_modules/mongoose/lib/services/model/applyHooks.js:175:17\n    at process._tickCallback (internal/process/next_tick.js:61:11)","exception":true,"date":"Fri Nov 08 2019 18:20:34 GMT+0000 (Coordinated Universal Time)","process":{"pid":6228,"uid":1000,"gid":1000,"cwd":"/home/ubuntu/dev/chat21-server","execPath":"/usr/bin/node","version":"v10.17.0","argv":["/usr/bin/node","/home/ubuntu/dev/chat21-server/bin/www"],"memoryUsage":{"rss":70467584,"heapTotal":40148992,"heapUsed":26539016,"external":18589319}},"os":{"loadavg":[0.04296875,0.01318359375,0.001953125],"uptime":35680},"trace":[{"column":25,"file":"/home/ubuntu/dev/chat21-server/routes/auth.js","function":null,"line":36,"method":null,"native":false},{"column":16,"file":"/home/ubuntu/dev/chat21-server/node_modules/mongoose/lib/model.js","function":null,"line":4074,"method":null,"native":false},{"column":17,"file":"/home/ubuntu/dev/chat21-server/node_modules/mongoose/lib/services/model/applyHooks.js","function":null,"line":175,"method":null,"native":false},{"column":11,"file":"internal/process/next_tick.js","function":"process._tickCallback","line":61,"method":"_tickCallback","native":false}]}

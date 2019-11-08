@@ -22,7 +22,6 @@ router.post('/signup', function (req, res) {
   } else {    
     
             var newUser = new User({
-                    _id: new mongoose.Types.ObjectId(),
                 // providerId: providerId,
                     email: req.body.email,
                     password: req.body.password,
@@ -70,7 +69,6 @@ router.post('/signup', function (req, res) {
 router.post('/signinAnonymously', function (req, res) {
  
    var newUser = new User({
-        _id: new mongoose.Types.ObjectId(),
         firstname: req.body.firstname,
         lastname: req.body.lastname,
         emailverified: false,
