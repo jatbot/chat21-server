@@ -13,7 +13,7 @@ router.post('/', function (req, res) {
   var subscription = new Subscription({
     target: req.body.target,
     event: req.body.event,
-    id_project: req.projectid,
+    app_id: req.appid,
     createdBy: req.user.id
   });
 
@@ -85,7 +85,7 @@ router.get('/', function (req, res) {
 
   
 
-  return Subscription.find({ "id_project": req.projectid }).
+  return Subscription.find({ "app_id": req.appid  }).
     exec(function (err, subscriptions, next) {
       if (err) {
         winston.error('LEAD ROUTE - REQUEST FIND ERR ', err)
