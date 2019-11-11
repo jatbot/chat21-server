@@ -1,7 +1,7 @@
 var request = require('request');
 var Subscription = require('../models/subscription');
 const messageEvent = require('../events/messageEvent');
-const groupEvent = require('../events/groupEvent');
+//const groupEvent = require('../events/groupEvent');
 var winston = require('../../config/winston');
 
 
