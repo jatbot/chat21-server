@@ -26,6 +26,14 @@ curl -v -X POST http://localhost:3200/auth/signinAnonymously
 curl -v -X POST -H 'Content-Type:application/json' -u andrea.leo@f21.it:123456 -d '{"name":"testprj"}' http://localhost:3200/apps
 ```
 
+## Sub
+
+### Create
+
+```
+curl -v -X POST -H 'Content-Type:application/json' -u andrea.leo@f21.it:123456 -d '{"target":"https://webhook.site/ab85eb43-3a3e-4bdb-a098-e467c6bbb7cc","event":"message.create"}' http://localhost:3200/app1/subscriptions
+```
+
 
 ## Message
 
