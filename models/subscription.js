@@ -20,7 +20,7 @@ var SubscriptionSchema = new Schema({
     default: uuidv4(),
     select: false
   },
-  id_project: {
+  app_id: {
     type: String,
     required: true,
     index: true
