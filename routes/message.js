@@ -15,21 +15,23 @@ const uuidv4 = require('uuid/v4');
 //curl -X POST -H 'Content-Type: application/json' -d '{"sender_id":"123", "sender_fullname":"SFN", "recipient_id":"RFN", "text": "123", "app_id":"123"}' https://chat21-server.herokuapp.com:3200/messages
 
 router.post('/', function(req, res) {
- var messageId = uuidv4();
 
- var path = "/apps/"+req.body.app_id + "/users/" + req.body.sender_id + "/messages/" + req.body.recipient_id;
-//  var path = "/apps/"+req.body.app_id + "/users/" + req.body.sender_id + "/messages/" + req.body.recipient_id + "/" + messageId;
+ var messageId = uuidv4();
+ var senderId = req.user.id;
+ var recipient_id = req.params.recipient_id;
+ var path = "/apps/" + req.appid + "/users/" + senderId + "/messages/" + recipient_id;
  winston.info("path: " + path);
 
  var newMessage = new Message({
     message_id: messageId,
-    sender_id: req.body.sender_id,
+    sender_id: senderId,
     sender_fullname: req.body.sender_fullname,
-    recipient_id: req.body.recipient_id,
+    recipient_id: recipient_id,
     recipient_fullname: req.body.recipient_fullname,
     text: req.body.text,
-    app_id: req.body.app_id,
-    createdBy: req.body.sender_id,
+    app_id: req.appid,
+    createdBy: senderId,
+    timelineOf: senderId,
     path: path,
     status: MessageConstants.CHAT_MESSAGE_STATUS.SENT
   });
@@ -58,7 +60,7 @@ router.post('/', function(req, res) {
 
 router.get('/', function(req, res) {
 
-    Message.find({"recipient": req.params.request_id, id_project: req.projectid}).sort({updatedAt: 'asc'}).exec(function(err, messages) { 
+    Message.find({timelineOf:req.user.id, recipient: req.params.request_id, id_project: req.projectid}).sort({updatedAt: 'asc'}).exec(function(err, messages) { 
       if (err) {
 return next(err);
       }

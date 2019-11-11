@@ -5,7 +5,7 @@ var bcrypt = require('bcrypt-nodejs');
 var UserSchema = new Schema({
     email: {
         type: String,
-        unique: true,
+        // unique: true,
         required: false,
         index: true
     },
@@ -14,6 +14,9 @@ var UserSchema = new Schema({
         required: false,
         // https://stackoverflow.com/questions/12096262/how-to-protect-the-password-field-in-mongoose-mongodb-so-it-wont-return-in-a-qu
         select: false 
+    },
+    providerId: {
+        type: String,
     },
     firstname: {
         type: String,

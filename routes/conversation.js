@@ -9,9 +9,9 @@ var Conversation = require("../models/conversation");
 
 
 
-router.get('/', function(req, res) {
+router.get('/:recipient', function(req, res) {
 
-  Conversation.find({"recipient": req.params.request_id, id_project: req.projectid}).sort({updatedAt: 'asc'}).exec(function(err, conversations) { 
+  Conversation.find({recipient: req.params.recipient, timelineOf: req.user.id, app_id: req.appid}).sort({updatedAt: 'asc'}).exec(function(err, conversations) { 
       if (err) {
         return next(err);
       }

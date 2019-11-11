@@ -22,7 +22,7 @@ router.post('/signup', function (req, res) {
   } else {    
     
             var newUser = new User({
-                // providerId: providerId,
+                    providerId: "email-password",
                     email: req.body.email,
                     password: req.body.password,
                     firstname: req.body.firstname,
@@ -69,6 +69,7 @@ router.post('/signup', function (req, res) {
 router.post('/signinAnonymously', function (req, res) {
  
    var newUser = new User({
+        providerId: "anonymous",
         firstname: req.body.firstname,
         lastname: req.body.lastname,
         emailverified: false,
@@ -86,13 +87,14 @@ router.post('/signinAnonymously', function (req, res) {
 
 
         var signOptions = {
-          issuer:  'https://tiledesk.com',
+          issuer:  'https://chat21.org',
           subject:  'user',
-          audience:  'https://tiledesk.com',           
+          audience:  'https://chat21.org'
         };
 
         var token = jwt.sign(savedUser, config.secret, signOptions);
-
+        
+        let userJson = savedUser.toObject();
         res.json({ success: true, token: 'JWT ' + token, user: userJson });
     }).catch(function (err) {
 
@@ -112,56 +114,36 @@ router.post('/signinWithCustomToken', [
   validtoken], function (req, res) {
 
 
-  var email = uuidv4() + '@tiledesk.com';
-  winston.info('signinAnonymously email: ' + email);
-
-  var password = uuidv4();
-  winston.info('signinAnonymously password: ' + password);
-
-  // signup ( email, password, firstname, lastname, emailverified)
-  return userService.signup(email, password, req.body.firstname, req.body.lastname, false)
-    .then(function (savedUser) {
-
-
       winston.debug('-- >> -- >> savedUser ', savedUser.toObject());
 
 
-      var newProject_user = new Project_user({
-        // _id: new mongoose.Types.ObjectId(),
-        id_project: req.body.id_project, //attentoqui
-        id_user: savedUser._id,
-        role: RoleConstants.USER,
-        user_available: true,
-        createdBy: savedUser.id,
-        updatedBy: savedUser.id
-      });
-
-      return newProject_user.save(function (err, savedProject_user) {
+      var newUser = new User({
+        providerId: "custom",
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        emailverified: false,
+        // auth: authSaved._id
+    });
+    // save the user
+    newUser.save(function (err, savedUser) {
         if (err) {
-          winston.error('Error saving object.', err)
-          return res.status(500).send({ success: false, msg: 'Error saving object.' });
+            return reject(err);
         }
 
+        winston.info('Anon User created', savedUser.toObject());
     
-        authEvent.emit("user.signin", savedUser);         
-        authEvent.emit("projectuser.create", savedProject_user);         
+        authEvent.emit("user.signin", savedUser);       
 
-          winston.info('project user created ', savedProject_user.toObject());
-
-          
-        //remove password 
-        let userJson = savedUser.toObject();
-        delete userJson.password;
-        
 
         var signOptions = {
-          issuer:  'https://tiledesk.com',
+          issuer:  'https://chat21.org',
           subject:  'user',
-          audience:  'https://tiledesk.com',           
+          audience: 'https://chat21.org',          
         };
 
         var token = jwt.sign(savedUser, config.secret, signOptions);
-
+        
+        let userJson = savedUser.toObject();
         res.json({ success: true, token: 'JWT ' + token, user: userJson });
     }).catch(function (err) {
 
@@ -170,7 +152,7 @@ router.post('/signinWithCustomToken', [
        winston.error('Error registering new user', err);
        res.send(err);
     });
-  });
+
 });
 
 
@@ -217,7 +199,7 @@ router.post('/signin', function (req, res) {
           //  JWT.  The processing of this claim is generally application specific.
           //  The "iss" value is a case-sensitive string containing a StringOrURI
           //  value.  Use of this claim is OPTIONAL.
-          issuer:  'https://tiledesk.com',   
+          issuer:  'https://chat21.org',   
 
   //         The "sub" (subject) claim identifies the principal that is the
   //  subject of the JWT.  The claims in a JWT are normally statements
@@ -243,7 +225,7 @@ router.post('/signin', function (req, res) {
   //  interpretation of audience values is generally application specific.
   //  Use of this claim is OPTIONAL.
 
-          audience:  'https://tiledesk.com',
+          audience:  'https://chat21.org',
 
           // uid: user._id  Uncaught ValidationError: "uid" is not allowed
           // expiresIn:  "12h",
@@ -261,13 +243,16 @@ router.post('/signin', function (req, res) {
               // if user is found and password is right create a token
               // TODO use userJSON 
               // TODO add subject
-              var token = jwt.sign(user, config.secret, signOptions);
+
+              let userJson = user.toObject();
+              delete userJson.password;
+
+              var token = jwt.sign(userJson, config.secret, signOptions);
              
               authEvent.emit("user.signin", {user:user, req:req});         
               
                 //remove password //test it              
-              let userJson = user.toObject();
-              delete userJson.password;
+             
 
               // return the information including token as JSON
               res.json({ success: true, token: 'JWT ' + token, user: userJson });

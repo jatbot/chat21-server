@@ -68,7 +68,7 @@ class PubSub {
 
       // listen when receive message from client
       ws.on('message',
-        (message) => this.handleReceivedClientMessage(id, message))
+        (message) => this.handleReceivedClientMessage(id, message, req))
 
       ws.on('close', () => {
         console.log('Client is disconnected')
@@ -81,7 +81,7 @@ class PubSub {
           this.onDisconnectCallback(userSubscriptions, id);
         }*/
         if (this.callbacks && this.callbacks.onDisconnect) {
-          this.callbacks.onDisconnect(id, userSubscriptions);
+          this.callbacks.onDisconnect(id, userSubscriptions, req);
         }
     
         userSubscriptions.forEach((sub) => {
@@ -185,13 +185,13 @@ class PubSub {
    * @param clientId
    * @param message
    */
-  handleReceivedClientMessage (clientId, message) {
+  handleReceivedClientMessage (clientId, message, req) {
 /*
     if (this.onMessageCallback ) {
       this.onMessageCallback(clientId, message);
     }*/
     if (this.callbacks && this.callbacks.onMessage) {
-      this.callbacks.onMessage(clientId, message);
+      this.callbacks.onMessage(clientId, message, req);
     }
 
     const client = this.getClient(clientId)
@@ -219,7 +219,7 @@ class PubSub {
           if (topic) {
 
             if (this.callbacks && this.callbacks.onSubscribe) {
-              this.callbacks.onSubscribe(topic, clientId);
+              this.callbacks.onSubscribe(topic, clientId, req);
             }
 
             this.handleAddSubscription(topic, clientId)
@@ -237,11 +237,22 @@ class PubSub {
           if (unsubscribeTopic) {
 
             if (this.callbacks && this.callbacks.onUnsubscribe) {
-              this.callbacks.onUnsubscribe(unsubscribeTopic, clientId);
+              this.callbacks.onUnsubscribe(unsubscribeTopic, clientId, req);
             }
 
             this.handleUnsubscribe(unsubscribeTopic, clientId)
           }
+
+          break
+
+        case 'send':
+    
+          const sendMessage = _.get(message, 'payload.message')
+          const fromSend = clientId;
+
+            if (this.callbacks && this.callbacks.onSend) {
+              this.callbacks.onSend(sendMessage, fromSend, req);
+            }          
 
           break
 
@@ -253,7 +264,7 @@ class PubSub {
             const from = clientId;
 
             if (this.callbacks && this.callbacks.onPublish) {
-              this.callbacks.onPublish(publishTopic, publishMessage, from);
+              this.callbacks.onPublish(publishTopic, publishMessage, from, req);
             }
 
             this.handlePublishMessage(publishTopic, publishMessage, from)
@@ -268,7 +279,7 @@ class PubSub {
           if (broadcastTopicName) {
 
             if (this.callbacks && this.callbacks.onBroadcast) {
-              this.callbacks.onBroadcast(broadcastTopicName, broadcastMessage, clientId);
+              this.callbacks.onBroadcast(broadcastTopicName, broadcastMessage, clientId, req);
             }
 
             this.handlePublishMessage(broadcastTopicName, broadcastMessage,

@@ -1,6 +1,6 @@
 <html>
     <head>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="./jquery.min.js"></script>
             <script src="./tilebase.js"></script>
 
             <script>
@@ -8,29 +8,29 @@
                 
                 // var                 
 
-                var url = 'ws://'+window.location.host+'/?token=JWT 123';
+                var url = 'ws://'+window.location.host+'/?token=JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGM2ZWQzZGYzYzI2YjZiZTkzZjI2NTkiLCJlbWFpbCI6ImFuZHJlYS5sZW9AZjIxLml0IiwiZW1haWx2ZXJpZmllZCI6ZmFsc2UsImlhdCI6MTU3MzMyMjg4MSwiYXVkIjoiaHR0cHM6Ly9jaGF0MjEub3JnIiwiaXNzIjoiaHR0cHM6Ly9jaGF0MjEub3JnIiwic3ViIjoidXNlciJ9.Tlq0BFrbM89v6XCkcleigyTYSV30kTRgeKXDlzFA2zM';
                 tilebaseConv = new Tilebase(  url           
                     , function(data, notification) {
-                        $('#conversations').append(`<div id="c-${data._id}">${data.last_message_text} ${notification.event}</div>`);
+                        $('#conversations').append(`<div id="c-${data._id}">${data.last_message_text} ${data.timelineOf} ${notification.event.method}</div>`);
                     }
                     , function(data, notification) {
-                        $('#c-'+data._id).html(`<div id="c-${data._id}">${data.last_message_text}  ${notification.event}</div>`);
+                        $('#c-'+data._id).html(`<div id="c-${data._id}">${data.last_message_text} ${data.timelineOf} ${notification.event.method}</div>`);
 
                     }
                     );
-                    tilebaseConv.start('{ "action": "subscribe", "payload": { "topic": "/apps/123/users/sendid/conversations/RFN"}}');
+                    tilebaseConv.start('{ "action": "subscribe", "payload": { "topic": "/apps/app1/users/5dc6ed3df3c26b6be93f2659/conversations/recipient_id"}}');
 
 
                 tilebaseMess = new Tilebase(url
                     , function(data, notification) {
-                       $('#messages').append(`<div id="m-${data._id}">${data.text} ${notification.event}</div>`);
+                       $('#messages').append(`<div id="m-${data._id}">${data.text} ${data.timelineOf} ${notification.event.method}</div>`);
                     }
                     , function(data, notification) {
-                        $('#m-'+data._id).html(`<div id="m-${data._id}">${data.text}  ${notification.event}</div>`);
+                        $('#m-'+data._id).html(`<div id="m-${data._id}">${data.text} ${data.timelineOf} ${notification.event.method}</div>`);
 
                     }
                     );
-                    tilebaseMess.start('{ "action": "subscribe", "payload": { "topic": "/apps/123/users/sendid/messages/RFN"}}');
+                    tilebaseMess.start('{ "action": "subscribe", "payload": { "topic": "/apps/app1/users/5dc6ed3df3c26b6be93f2659/messages/recipient_id"}}');
 
 
 		    //tilebase.start('{ "action": "subscribe", "payload": { "topic": "/apps/123/users/sendid/messages/RFN"}}');
@@ -43,25 +43,25 @@
 
 
 
-tilebaseRConv = new Tilebase(  url  
-    , function(data, notification) {   
-       $('#rconversations').append(`<div id="cr-${data._id}">${data.last_message_text} ${notification.event}</div>`);
- }
-, function(data, notification) {       
-     $('#cr-'+data._id).html(`<div id="cr-${data._id}">${data.last_message_text}`);
-   });
+                tilebaseRConv = new Tilebase(  url  
+                    , function(data, notification) {   
+                    $('#rconversations').append(`<div id="cr-${data._id}">${data.last_message_text} ${data.timelineOf} ${notification.event.method}</div>`);
+                }
+                , function(data, notification) {       
+                    $('#cr-'+data._id).html(`<div id="cr-${data._id}">${data.last_message_text} ${data.timelineOf} ${notification.event.method}`);
+                });
 
-tilebaseRConv.start('{ "action": "subscribe", "payload": { "topic": "/apps/123/users/RFN/conversations/sendid"}}');    
+                tilebaseRConv.start('{ "action": "subscribe", "payload": { "topic": "/apps/app1/users/recipient_id/conversations/5dc6ed3df3c26b6be93f2659"}}');    
 
-tilebaseRMess = new Tilebase(url 
- , function(data, notification) {      
-      $('#rmessages').append(`<div id="mr-${data._id}">${data.text} ${notification.event}</div>`);
-                }     
- , function(data, notification) {     
-      $('#mr-'+data._id).html(`<div id="mr-${data._id}">${data.text}  ${notification.event}</div>`);
-    }    
-                                                                                                                                                                                                );                                                                                                                                                                                                                                                                 
-         tilebaseRMess.start('{ "action": "subscribe", "payload": { "topic": "/apps/123/users/RFN/messages/sendid"}}');  
+                tilebaseRMess = new Tilebase(url 
+                , function(data, notification) {      
+                    $('#rmessages').append(`<div id="mr-${data._id}">${data.text} ${data.timelineOf} ${notification.event.method}</div>`);
+                                }     
+                , function(data, notification) {     
+                    $('#mr-'+data._id).html(`<div id="mr-${data._id}">${data.text} ${data.timelineOf} ${notification.event.method}</div>`);
+                    }    
+                                                                                                                                                                                                                );                                                                                                                                                                                                                                                                 
+                        tilebaseRMess.start('{ "action": "subscribe", "payload": { "topic": "/apps/app1/users/recipient_id/messages/5dc6ed3df3c26b6be93f2659"}}');  
 
 
 

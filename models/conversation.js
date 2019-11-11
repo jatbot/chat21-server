@@ -64,7 +64,11 @@ var ConversationSchema = new Schema({
     type: String,
     required: true
   },
-  // timelineOf: {                                                                                                                                                                               
+  timelineOf: {   
+    type: String,
+    required: true,
+    index: true                                                                                                                                                       
+  },                                                                                                                                                                            
    path: {
     type: String,
     required: true,

@@ -59,11 +59,11 @@ messageEvent.on('message.sent', function(message) {
 
       var timelineNewMessage = new Message(timelineNewMessageClone);
 
-      //var path = "/apps/" + message.app_id + "/users/" + message.recipient_id + "/messages/" + message.sender_id + "/" + message.message_id;  
       var path = "/apps/" + message.app_id + "/users/" + message.recipient_id + "/messages/" + message.sender_id; 
       winston.info("send direct message to recipient timeline: " + path);
 
       timelineNewMessage.path = path;
+      timelineNewMessage.timelineOf = message.recipient_id;
       timelineNewMessage.status =  MessageConstants.CHAT_MESSAGE_STATUS.DELIVERED;
 
       timelineNewMessage.save(function(err, savedMessage) {
@@ -98,6 +98,7 @@ messageEvent.on('message.sent', function(message) {
            winston.info("send group message to recipient timeline: " + path);
 
            timelineNewMessage.path = path;
+           timelineNewMessage.timelineOf = message.recipient_id;
            timelineNewMessage.status =  MessageConstants.CHAT_MESSAGE_STATUS.DELIVERED;
 
            timelineNewMessage.save(function(err, savedMessage) {
@@ -124,13 +125,16 @@ messageEvent.on('message.create', function(message) {
 
    var newMessage = true;
    var path;
+   var timelineOf;
    if (message.status == MessageConstants.CHAT_MESSAGE_STATUS.SENDING || message.status == MessageConstants.CHAT_MESSAGE_STATUS.SENT){
       newMessage = false;
       path = "/apps/"+message.app_id + "/users/" + message.sender_id + "/conversations/" + message.recipient_id;
+      timelineOf = message.sender_id;
    }
    if (message.status == MessageConstants.CHAT_MESSAGE_STATUS.DELIVERED){
     newMessage = false;
     path = "/apps/"+message.app_id + "/users/" + message.recipient_id + "/conversations/" + message.sender_id;
+    timelineOf = message.recipient_id;
  }
 
   //
@@ -150,10 +154,13 @@ messageEvent.on('message.create', function(message) {
     type: message.type,
     createdBy: message.createdBy,
     attributes: message.attributes,
-    path: path
+    path: path,
+    timelineOf: timelineOf
     };                              
 
-   var query = {path: path},
+   //var query = {path: path},
+   var query = {sender:message.sender_id, recipient: message.recipient_id, timelineOf: timelineOf},
+  
     options = { upsert: true, new: true, setDefaultsOnInsert: true 
        , rawResult:true
     };

@@ -9,10 +9,15 @@ var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var mongoose = require('mongoose');
 
+var passport = require('passport');
+require('./middleware/passport')(passport);
+var validtoken = require('./middleware/valid-token');
+
 var config = require('./config/database');
 var cors = require('cors');
 
 var Message = require("./models/message");
+var AppModel = require("./models/app");
 
 var winston = require('./config/winston');
 
@@ -39,6 +44,7 @@ if (process.env.NODE_ENV == 'test')  {
 var message = require('./routes/message');
 var conversation = require('./routes/conversation');
 var auth = require('./routes/auth');
+var appRoute = require('./routes/app');
 
 
 
@@ -87,7 +93,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(morgan('combined', { stream: winston.stream }));
 
 
-// app.use(passport.initialize());
+app.use(passport.initialize());
 
 app.use(cors());
 
@@ -97,11 +103,57 @@ app.get('/', function (req, res) {
   res.send('Hello from Chat21 server. It\'s UP. See the documentation here http://docs.chat21.org');
 });
 
+
+var appIdSetter = function (req, res, next) {
+  var appid = req.params.appid;
+  //console.log("projectIdSetter projectid", projectid);
+
+  // if (projectid) {
+    req.appid = appid;
+  // }
+  
+  next()
+}
+
+
+
+
+
+var appSetter = function (req, res, next) {
+  var appid = req.params.appid;
+  //console.log("projectSetter projectid", projectid);
+
+  if (appid) {
+    AppModel.findById(appid, function(err, app){
+      if (err) {
+         console.warn("Problem getting app with id",appid);
+        //console.warn("Error getting project with id",projectid, err);
+      }
+  
+      if (!app) {
+        //console.warn("Project not found for id", req.projectid);
+        next();
+      } else {
+        req.app = app;
+        // console.log("req.project", req.project);
+        next(); //call next one time for projectSetter function
+      }
+    
+    });
+  
+  }else {
+    next()
+  }
   
 
-app.use('/auth',auth);
-app.use('/messages', message);
-app.use('/conversations', conversation);
+}
+
+app.use('/auth',auth);  
+app.use('/apps', [passport.authenticate(['basic', 'jwt'], { session: false }), validtoken], appRoute);
+
+app.use('/:appid', [appIdSetter, appSetter]);
+app.use('/:appid/conversations', [passport.authenticate(['basic', 'jwt'], { session: false }), validtoken], conversation);
+app.use('/:appid/conversations/:recipient_id/messages', [passport.authenticate(['basic', 'jwt'], { session: false }), validtoken] , message);
 
  
   

@@ -88,10 +88,10 @@ class Tilebase {
                                 json.payload.message.forEach(element => {
                                    // console.log("element", element);
                                     //let insUp = that.insertOrUpdate(element);
-				    let insUp = json.payload.method;
-			            console.log("insUp",insUp);
+                            let insUp = json.payload.method;
+                                console.log("insUp",insUp);
 
-                                    var object = {event: json.event, data: element};
+                                    var object = {event: json.payload, data: element};
 
                                     if (insUp=="CREATE" && that.onCreate) {
                                         that.onCreate(element, object);
@@ -106,10 +106,10 @@ class Tilebase {
                                 });
                             }else {
                                 //let insUp = that.insertOrUpdate(json.payload.message);
-				  let insUp = json.payload.method;                                                                                                                                                                                                                         
+				                let insUp = json.payload.method;                                                                                                                                                                                                                         
                                   console.log("insUp",insUp);     
 
-                                var object = {event: json.event, data: json};
+                                var object = {event: json.payload, data: json};
 
                                 if (insUp=="CREATE" && that.onCreate) {
                                     that.onCreate(json.payload.message, object);
