@@ -47,7 +47,7 @@ var auth = require('./routes/auth');
 var appRoute = require('./routes/app');
 var subscription = require('./routes/subscription');
 
-var subscriptionNotifier = require('./services/subscriptionNotifier');
+var subscriptionNotifier = require('./services/SubscriptionNotifier');
 subscriptionNotifier.start();
 
 var app = express();
