@@ -76,12 +76,33 @@ messageEvent.on('message.sent', function(message) {
         messageEvent.emit("message.create",savedMessage);
       });
   } else if (message.channel_type=="group") {
-	winston.info("group msg");
-      var timelineNewMessageClone = Object.assign({}, message.toObject());
+      winston.info("group msg");
+      var timelineNewMessageClone = Object.assign({}, message.toObject());   
       delete timelineNewMessageClone._id;
-
+	  /*
+      var msgTimelineNewMessageClone = Object.assign({}, message.toObject());
+      delete msgTimelineNewMessageClone._id; 
+	  
+      var timelineMsgNewMessage = new Message(msgTimelineNewMessageClone);  
+      timelineMsgNewMessage.timelineOf = message.recipient_id;
+      timelineMsgNewMessage.status =  MessageConstants.CHAT_MESSAGE_STATUS.DELIVERED;	 	  
+      	  */
       var timelineNewMessage = new Message(timelineNewMessageClone);  
- 
+  	  timelineNewMessage.timelineOf = "messages";
+          timelineNewMessage.status =  MessageConstants.CHAT_MESSAGE_STATUS.DELIVERED;	  	  
+      
+         timelineNewMessage.save(function(err, savedMessage) {
+             if (err) {
+               return winston.error(err);               
+             }
+
+             console.log("new global group timeline message created", savedMessage.toObject());
+             messageEvent.emit("message.create",savedMessage);
+           });        
+       
+       
+       
+       timelineNewMessage.timelineOf = message.recipient_id;
       Group.findOne({group_id: message.recipient_id}, function(err, group) {
        if (err) {
          winston.error("error getting group: " + message.recipient_id);    
@@ -98,8 +119,7 @@ messageEvent.on('message.sent', function(message) {
            winston.info("send group message to recipient timeline: " + path);
 
            timelineNewMessage.path = path;
-           timelineNewMessage.timelineOf = message.recipient_id;
-           timelineNewMessage.status =  MessageConstants.CHAT_MESSAGE_STATUS.DELIVERED;
+          
 
            timelineNewMessage.save(function(err, savedMessage) {
              if (err) {
