@@ -46,6 +46,8 @@ var conversation = require('./routes/conversation');
 var auth = require('./routes/auth');
 var appRoute = require('./routes/app');
 var subscription = require('./routes/subscription');
+var group = require('./routes/group');
+
 
 var subscriptionNotifier = require('./services/SubscriptionNotifier');
 subscriptionNotifier.start();
@@ -157,6 +159,7 @@ app.use('/:appid', [appIdSetter, appSetter]);
 app.use('/:appid/conversations', [passport.authenticate(['basic', 'jwt'], { session: false }), validtoken], conversation);
 app.use('/:appid/conversations/:recipient_id/messages', [passport.authenticate(['basic', 'jwt'], { session: false }), validtoken] , message);
 app.use('/:appid/subscriptions', [passport.authenticate(['basic', 'jwt'], { session: false }), validtoken], subscription);
+app.use('/:appid/groups', [passport.authenticate(['basic', 'jwt'], { session: false }), validtoken], group);
  
   
 // REENABLEIT
