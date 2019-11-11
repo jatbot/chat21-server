@@ -50,6 +50,9 @@ curl -v -X POST -H 'Content-Type:application/json' -u andrea.leo@f21.it:123456 -
 ```
 curl -v -X POST -H 'Content-Type: application/json'  -u andrea.leo@f21.it:123456 -d '{"sender_fullname":"SFN", "text": "hi"}' http://localhost:3200/app1/conversations/recipient_id/messages
 ```
+```
+curl -v -X POST -H 'Content-Type: application/json'  -u andrea.leo@f21.it:123456 -d '{"sender_fullname":"SFN", "text": "hi","channel_typ":"group"}' http://localhost:3200/app1/conversations/grecipient_id/messages
+```
 
 ## Conversation
 ### Get
