@@ -45,7 +45,7 @@ var message = require('./routes/message');
 var conversation = require('./routes/conversation');
 var auth = require('./routes/auth');
 var appRoute = require('./routes/app');
-
+var subscription = require('./routes/subscription');
 
 
 var app = express();
@@ -154,7 +154,7 @@ app.use('/apps', [passport.authenticate(['basic', 'jwt'], { session: false }), v
 app.use('/:appid', [appIdSetter, appSetter]);
 app.use('/:appid/conversations', [passport.authenticate(['basic', 'jwt'], { session: false }), validtoken], conversation);
 app.use('/:appid/conversations/:recipient_id/messages', [passport.authenticate(['basic', 'jwt'], { session: false }), validtoken] , message);
-
+app.use('/:appid/subscriptions', [passport.authenticate(['basic', 'jwt'], { session: false }), validtoken], subscription);
  
   
 // REENABLEIT
