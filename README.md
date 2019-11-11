@@ -34,6 +34,14 @@ curl -v -X POST -H 'Content-Type:application/json' -u andrea.leo@f21.it:123456 -
 curl -v -X POST -H 'Content-Type:application/json' -u andrea.leo@f21.it:123456 -d '{"target":"https://webhook.site/ab85eb43-3a3e-4bdb-a098-e467c6bbb7cc","event":"message.create"}' http://localhost:3200/app1/subscriptions
 ```
 
+## Group
+
+### Create
+
+```
+curl -v -X POST -H 'Content-Type:application/json' -u andrea.leo@f21.it:123456 -d '{"group_name":"g1","group_members ":{"io":1}}' http://localhost:3200/app1/groups
+
+```
 
 ## Message
 
