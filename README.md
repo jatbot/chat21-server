@@ -39,7 +39,7 @@ curl -v -X POST -H 'Content-Type:application/json' -u andrea.leo@f21.it:123456 -
 ### Create
 
 ```
-curl -v -X POST -H 'Content-Type:application/json' -u andrea.leo@f21.it:123456 -d '{"group_name":"g1","group_members ":{"io":1}}' http://localhost:3200/app1/groups
+curl -v -X POST -H 'Content-Type:application/json' -u andrea.leo@f21.it:123456 -d '{"group_name":"g1","group_members":{"io":1}}' http://localhost:3200/app1/groups
 
 ```
 
