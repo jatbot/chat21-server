@@ -21,7 +21,7 @@ router.post('/', function(req, res) {
  var newGroup = new Group({
     group_id: groupId,
     group_name: req.body.group_name,
-    group_owner: req.body.group_owner,
+    group_owner: senderId,
     app_id: req.appid,
     group_members : req.body.group_members,
     attributes : req.body.attributes,
