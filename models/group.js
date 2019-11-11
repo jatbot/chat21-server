@@ -21,7 +21,8 @@ var GroupSchema = new Schema({
     index: true
   },
   group_members : {
-    type: Object   
+    type: Object,
+    required: true
   },
   invited_members : {
     type: Object   
