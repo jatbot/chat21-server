@@ -32,8 +32,8 @@ router.post('/', [passport.authenticate(['basic', 'jwt'], { session: false }), v
       winston.error('--- > ERROR ', err)
       return res.status(500).send({ success: false, msg: 'Error saving object.' });
     }
-    // console.log('--- SAVE PROJECT ', savedProject)
-    //res.json(savedProject);
+    console.log('--- SAVE app ', savedApp)
+    res.json(savedApp);
 
    
 
