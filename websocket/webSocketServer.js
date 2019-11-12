@@ -43,7 +43,7 @@ class WebSocketServer {
         winston.debug('token:'+ token);
         winston.debug('config.secret:'+ config.secret);
 
-      
+      //add appid parameter here
         if (!token)
             cb(false, 401, 'Unauthorized');
         else {
@@ -208,7 +208,8 @@ class WebSocketServer {
     conversationEvent.on('conversation.create', function (conversation) {    
         winston.debug('conversationEvent create websocket server ', conversation);   
 
-        var topic =  '/apps/'+conversation.app_id+'/users/'+conversation.sender+'/conversations/'+conversation.recipient;      
+        //var topic =  '/apps/'+conversation.app_id+'/users/'+conversation.sender+'/conversations/'+conversation.recipient;      
+        var topic =  '/apps/'+conversation.app_id+'/users/'+conversation.sender+'/conversations';      
         winston.info('conversationEvent create websocket server topic: '+ topic);     
         pubSubServer.handlePublishMessage (topic, conversation, undefined, true, "CREATE");                                                                                     
     });
@@ -219,10 +220,12 @@ class WebSocketServer {
 
         var path;
         if (conversation.status == MessageConstants.CHAT_MESSAGE_STATUS.SENDING || conversation.status == MessageConstants.CHAT_MESSAGE_STATUS.SENT){
-            path = "/apps/"+conversation.app_id + "/users/" + conversation.sender + "/conversations/" + conversation.recipient;                                                                                                                                                             
+            //path = "/apps/"+conversation.app_id + "/users/" + conversation.sender + "/conversations/" + conversation.recipient;                                                                                                                                                             
+            path = "/apps/"+conversation.app_id + "/users/" + conversation.sender + "/conversations";
         }                                                                                                                                                                                                                                                                        
         if (conversation.status == MessageConstants.CHAT_MESSAGE_STATUS.DELIVERED){
-          path = "/apps/"+conversation.app_id + "/users/" + conversation.recipient + "/conversations/" + conversation.sender;                                                                                                                                                            
+          //path = "/apps/"+conversation.app_id + "/users/" + conversation.recipient + "/conversations/" + conversation.sender;                                                                                                                                                            
+          path = "/apps/"+conversation.app_id + "/users/" + conversation.recipient + "/conversations";
         }               
 
 

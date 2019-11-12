@@ -18,7 +18,7 @@
 
                     }
                     );
-                    tilebaseConv.start('{ "action": "subscribe", "payload": { "topic": "/apps/app1/users/5dc6ed3df3c26b6be93f2659/conversations/recipient_id"}}');
+                    tilebaseConv.start('{ "action": "subscribe", "payload": { "topic": "/apps/app1/users/5dc6ed3df3c26b6be93f2659/conversations"}}');
 
 
                 tilebaseMess = new Tilebase(url
@@ -51,7 +51,7 @@
                     $('#cr-'+data._id).html(`<div id="cr-${data._id}">${data.last_message_text} ${data.timelineOf} ${notification.event.method}`);
                 });
 
-                tilebaseRConv.start('{ "action": "subscribe", "payload": { "topic": "/apps/app1/users/recipient_id/conversations/5dc6ed3df3c26b6be93f2659"}}');    
+                tilebaseRConv.start('{ "action": "subscribe", "payload": { "topic": "/apps/app1/users/recipient_id/conversations"}}');    
 
                 tilebaseRMess = new Tilebase(url 
                 , function(data, notification) {      
