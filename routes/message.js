@@ -28,6 +28,7 @@ router.post('/', function(req, res) {
     sender_fullname: req.body.sender_fullname,
     recipient_id: recipient_id,
     recipient_fullname: req.body.recipient_fullname,
+    channel_type: req.body.channel_type,
     text: req.body.text,
     app_id: req.appid,
     createdBy: senderId,

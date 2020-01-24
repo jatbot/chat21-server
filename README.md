@@ -62,7 +62,7 @@ curl -v -X POST -H 'Content-Type: application/json'  -u andrea.leo@f21.it:123456
 
 ### Send Group
 ```
-curl -v -X POST -H 'Content-Type: application/json'  -u andrea.leo@f21.it:123456 -d '{"sender_fullname":"SFN", "text": "hi","channel_typ":"group"}' http://localhost:3200/app1/conversations/g1/messages
+curl -v -X POST -H 'Content-Type: application/json'  -u andrea.leo@f21.it:123456 -d '{"sender_fullname":"SFN", "text": "hi","channel_type":"group"}' http://localhost:3200/app1/conversations/g1/messages
 ```
 
 ## Conversation

@@ -50,18 +50,7 @@ router.post('/signup', function (req, res) {
                   
 
         
-      }).catch(function (err) {
-
-
-      
-        authEvent.emit("user.signup.error",  {req: req, err:err});       
-
-       
-
-
-         winston.error('Error registering new user', err);
-         res.send(err);
-      });
+            });
   }
 });
 

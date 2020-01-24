@@ -79,6 +79,7 @@ messageEvent.on('message.sent', function(message) {
       winston.info("group msg");
       var timelineNewMessageClone = Object.assign({}, message.toObject());   
       delete timelineNewMessageClone._id;
+      winston.info("timelineNewMessageClone", timelineNewMessageClone);
 	  /*
       var msgTimelineNewMessageClone = Object.assign({}, message.toObject());
       delete msgTimelineNewMessageClone._id; 
@@ -87,16 +88,19 @@ messageEvent.on('message.sent', function(message) {
       timelineMsgNewMessage.timelineOf = message.recipient_id;
       timelineMsgNewMessage.status =  MessageConstants.CHAT_MESSAGE_STATUS.DELIVERED;	 	  
       	  */
-      var timelineNewMessage = new Message(timelineNewMessageClone);  
-  	  timelineNewMessage.timelineOf = "messages";
-          timelineNewMessage.status =  MessageConstants.CHAT_MESSAGE_STATUS.DELIVERED;	  	  
-      
+     
+         timelineNewMessageClone.timelineOf = "messages";
+         timelineNewMessageClone.status =  MessageConstants.CHAT_MESSAGE_STATUS.DELIVERED;	  	  
+         
+          var timelineNewMessage = new Message(timelineNewMessageClone);  
+          winston.info("timelineNewMessage", timelineNewMessage.toObject());
+
          timelineNewMessage.save(function(err, savedMessage) {
              if (err) {
                return winston.error(err);               
              }
 
-             console.log("new global group timeline message created", savedMessage.toObject());
+             winston.info("new global group timeline message created", savedMessage.toObject());
              messageEvent.emit("message.create",savedMessage);
            });        
        
